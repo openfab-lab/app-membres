@@ -1,0 +1,27 @@
+<%- include('../layout/top', {page: 'login'}); %>
+<div class="container">
+    <h1 class="display-3">Inscription</h1>
+    <div class="col-md-4">
+      <h2>Etape 2</h2>
+      <p>AGE</p>
+    </div>
+    <form>
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-6 form-group">
+                    <label>Oui, j'ai plus de 18 ans</label>
+                    <input type="checkbox" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 form-group">
+                    <label>Non, j'ai moins de 18 ans mais j'ai l'autorisation de mes parents / tuteurs</label>
+                    <input type="checkbox" class="form-control">
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-lg btn-info">Aller vers l'étape 3</button>
+        </div>
+    </form>
+</div>
+<%- include('../layout/bottom'); %>

@@ -1,0 +1,17 @@
+<%- include('layout/top', {page: 'login'}); %>
+<div class="container">
+    <h1 class="display-3">Connexion</h1>
+    <form action="/login" method="post">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Adresse Email</label>
+        <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Mot de passe</label>
+        <input type="password" class="form-control" name="password" placeholder="Password">
+      </div>
+      <button type="submit" class="btn btn-secondary">Envoyer</button>
+      <a href="/inscription/etape1" target="_self">S'inscrire</a>
+    </form>
+</div>
+<%- include('layout/bottom'); %>

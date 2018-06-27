@@ -1,0 +1,56 @@
+<%- include('../layout/top', {page: 'login'}); %>
+<div class="container">
+    <h1 class="display-3">Inscription</h1>
+    <div class="col-md-4">
+      <h2>Etape 1</h2>
+      <p>On veut tout savoir sur toi!</p>
+    </div>
+    <form>
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-6 form-group">
+                    <label>Pr&eacute;nom</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label>Nom de famille</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <hr>
+            <div class="form-group">
+                <label>Adresse postale</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="row">
+                <div class="col-sm-6 form-group">
+                    <label>Ville</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label>Code Postal</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+        <div class="form-group">
+            <label>Numéro de téléphone</label>
+            <input type="text" class="form-control">
+        </div>
+        <hr>
+        <div class="form-group">
+            <label>Adresse email</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Mot de passe</label>
+            <input type="password" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Confirmation du mot de passe</label>
+            <input type="password" class="form-control">
+        </div>
+        <button type="button" class="btn btn-lg btn-info">Aller vers l'étape 2</button>
+        </div>
+    </form>
+</div>
+<%- include('../layout/bottom'); %>

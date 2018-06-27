@@ -1,0 +1,69 @@
+{
+  "name": "openfab-membres",
+  "version": "1.0.0",
+  "description": "Application for our members profiles and subscriptions information.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "watch": "nodemon --exec npm run start",
+    "test": "NODE_ENV=test LOG_LEVEL=fatal node_modules/.bin/istanbul cover node_modules/.bin/_mocha test/index.js;",
+    "lint": "semistandard --verbose 'src/**/*.js' 'test/**/*.js'",
+    "pretest": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openfab-lab/app-membres.git"
+  },
+  "keywords": [
+    "lys",
+    "entities",
+    "database"
+  ],
+  "author": "Sagacify (https://github.com/openfab-la)",
+  "bugs": {
+    "url": "https://github.com/openfab-lab/app-membres/issues"
+  },
+  "homepage": "https://github.com/openfab-lab/app-membres#readme",
+  "devDependencies": {
+    "nodemon": "1.12.1",
+    "istanbul": "1.1.0-alpha.1",
+    "chai": "4.1.2",
+    "chai-as-promised": "7.1.1",
+    "mocha": "4.0.1",
+    "mocha-standard": "1.0.0",
+    "nock": "9.1.0",
+    "semistandard": "11.0.0"
+  },
+  "dependencies": {
+    "ajv": "6.1.1",
+    "bcrypt-nodejs": "0.0.3",
+    "bluebird": "3.5.1",
+    "body-parser": "1.18.2",
+    "config": "1.28.1",
+    "cookie-session": "1.3.2",
+    "ejs": "2.5.8",
+    "express": "4.16.2",
+    "lodash": "4.17.4",
+    "passport": "0.4.0",
+    "pg": "7.4.1",
+    "pg-hstore": "2.3.2",
+    "qs": "6.5.0",
+    "saga-logger": "0.0.8",
+    "saga-managed-error": "1.0.0",
+    "sequelize": "4.32.2",
+    "serve-favicon": "2.4.5"
+  },
+  "semistandard": {
+    "globals": [
+      "describe",
+      "it",
+      "before",
+      "after",
+      "beforeEach",
+      "afterEach"
+    ]
+  }
+}

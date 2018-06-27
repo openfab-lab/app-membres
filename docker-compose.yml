@@ -1,0 +1,26 @@
+node:
+  build: .
+  command: npm run watch
+  environment:
+    APP_PORT: 17460
+    APP_ENDPOINT: https://membres.openfab.be
+    LOG_LEVEL: debug
+    NODE_ENV: development
+    PG_HOST: postgresql
+    PG_USER: postgres
+    PG_DB: postgres
+    SECURITY_HASH_SALT: openfabiswatchingus
+    SECURITY_SECRET: openfabiswatchingus
+  ports:
+    - "19461:17461"
+  volumes:
+    - ./config:/var/www/config
+    - ./src:/var/www/src
+    - ./package.json:/var/www/package.json
+  links:
+    - postgresql
+
+postgresql:
+  image: postgres:9.5
+  ports:
+    - "5460:5432"
