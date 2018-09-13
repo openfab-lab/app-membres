@@ -2,7 +2,7 @@ node:
   build: .
   command: npm run watch
   environment:
-    APP_PORT: 17460
+    APP_PORT: 17461
     APP_ENDPOINT: https://membres.openfab.be
     LOG_LEVEL: debug
     NODE_ENV: development
