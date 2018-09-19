@@ -1,5 +1,28 @@
 <%- include('../layout/top', {page: 'adminUsers'}); %>
-<% users.forEach(function (user) { %>
-    <%- JSON.stringify(user) %>
-<% }) %>
+<div class="container">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Pr&eacute;nom</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Nom d'utilisateur</th>
+      <th scope="col">Num&eacute;ro de t&eacute;l&eacute;phone</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% users.forEach(function (user) { %>
+        <tr>
+          <th scope="row"><%= user.shortId %></th>
+          <td><%= user.firstName %></td>
+          <td><%= user.lastName %></td>
+          <td><%= user.email %></td>
+          <td><%= user.phoneNumber %></td>
+          <td>Edit</td>
+        </tr>
+    <% }) %>
+  </tbody>
+</table>
+</div>
 <%- include('../layout/bottom'); %>

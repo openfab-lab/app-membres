@@ -9,8 +9,9 @@ const models = require('../models');
 
 const publicRoutes = {
   '/connexion': ['GET'],
+  '/membres': ['GET'],
   '/healthcheck': ['GET'],
-  '/inscription': ['GET']
+  '/inscription': ['GET', 'POST']
 };
 
 const adminRoutes = {
@@ -28,12 +29,12 @@ const checkAuthentication = (req, res, next) => {
   // Is user authorized to access admin routes
   if (req.user &&
       pathIsInList(req.path, req.method, adminRoutes) &&
-      req.user.permissionsLevel !== '3') {
+      req.user.permissionsLevel !== 3) {
     return res.sendStatus(401);
   }
   if (req.user &&
     pathIsInList(req.path, req.method, adminRoutes) &&
-    req.user.permissionsLevel === '3') {
+    req.user.permissionsLevel === 3) {
     return next();
   }
 

@@ -54,7 +54,8 @@
     "saga-logger": "0.0.8",
     "saga-managed-error": "1.0.0",
     "sequelize": "4.32.2",
-    "serve-favicon": "2.4.5"
+    "serve-favicon": "2.4.5",
+    "shortid": "^2.2.13"
   },
   "semistandard": {
     "globals": [

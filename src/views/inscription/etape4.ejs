@@ -5,7 +5,7 @@
       <h2>Etape 4</h2>
       <p>REGLEMENT</p>
     </div>
-    <form>
+    <form action="/inscription/etape4?id=<%= id %>" method="post">
         <div class="col-sm-12">
             <div class="row">
                 <div class="col-sm-6">
@@ -15,11 +15,11 @@
             <div class="row">
                 <div class="col-sm-6 form-group">
                     <label>Oui, j'ai lu le réglement, j'y adhère au plus profond de moi et j'ai tatoué le logo d'openfab sur ma fesse</label>
-                    <input type="checkbox" class="form-control">
+                    <input type="checkbox" class="form-control" name="house_rules" required>
                 </div>
             </div>
         </div>
-        <button type="button" class="btn btn-lg btn-info">Finaliser l'inscription</button>
+        <button type="submit" class="btn btn-lg btn-info">Finaliser l'inscription</button>
         </div>
     </form>
 </div>

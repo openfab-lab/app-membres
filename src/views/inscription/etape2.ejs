@@ -5,22 +5,28 @@
       <h2>Etape 2</h2>
       <p>AGE</p>
     </div>
-    <form>
+    <% if (errorMessage) { %>
+        <div class="alert alert-danger" role="alert">
+          <%= errorMessage %>
+        </div>
+    <% } %>
+    <form action="/inscription/etape2?id=<%= id %>" method="post">
         <div class="col-sm-12">
-            <div class="row">
-                <div class="col-sm-6 form-group">
-                    <label>Oui, j'ai plus de 18 ans</label>
-                    <input type="checkbox" class="form-control">
-                </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="majority" id="over_than_18" value="over_than_18" checked>
+              <label class="form-check-label" for="over_than_18">
+                Oui, j'ai plus de 18 ans
+              </label>
             </div>
-            <div class="row">
-                <div class="col-sm-6 form-group">
-                    <label>Non, j'ai moins de 18 ans mais j'ai l'autorisation de mes parents / tuteurs</label>
-                    <input type="checkbox" class="form-control">
-                </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="majority" id="under_than_18" value="under_than_18">
+              <label class="form-check-label" for="under_than_18">
+                Non, j'ai moins de 18 ans mais j'ai l'autorisation de mes parents / tuteurs
+              </label>
             </div>
         </div>
-        <button type="button" class="btn btn-lg btn-info">Aller vers l'étape 3</button>
+        <br />
+        <button type="submit" class="btn btn-lg btn-info">Aller vers l'étape 3</button>
         </div>
     </form>
 </div>

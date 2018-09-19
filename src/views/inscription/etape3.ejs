@@ -5,7 +5,7 @@
       <h2>Etape 3</h2>
       <p>ASSURANCE</p>
     </div>
-    <form>
+    <form action="/inscription/etape3?id=<%= id %>" method="post">
         <div class="col-sm-12">
             <div class="row">
                 <div class="col-sm-6">
@@ -15,11 +15,11 @@
             <div class="row">
                 <div class="col-sm-6 form-group">
                     <label>Oui, j'ai lu l'assurance et j'accepte les conditions</label>
-                    <input type="checkbox" class="form-control">
+                    <input type="checkbox" class="form-control" name="insurance" required>
                 </div>
             </div>
         </div>
-        <button type="button" class="btn btn-lg btn-info">Aller vers l'étape 4</button>
+        <button type="submit" class="btn btn-lg btn-info">Aller vers l'étape 4</button>
         </div>
     </form>
 </div>

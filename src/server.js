@@ -35,7 +35,10 @@ module.exports = () => {
     allowDots: true
   }));
 
-  app.use(bodyParser.urlencoded({ extended: false }));
+  app.use(bodyParser.urlencoded({
+    extended: false,
+    type: 'application/x-www-form-urlencoded'
+  }));
 
   app.use(
     bodyParser.json({

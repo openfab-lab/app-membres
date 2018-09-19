@@ -5,51 +5,50 @@
       <h2>Etape 1</h2>
       <p>On veut tout savoir sur toi!</p>
     </div>
-    <form>
+    <% if (errorMessage) { %>
+        <div class="alert alert-danger" role="alert">
+          <%= errorMessage %>
+        </div>
+    <% } %>
+    <form action="/inscription/etape1" method="post">
         <div class="col-sm-12">
             <div class="row">
                 <div class="col-sm-6 form-group">
                     <label>Pr&eacute;nom</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="first_name" value="<%= returningSubscription.first_name %>" required>
                 </div>
                 <div class="col-sm-6 form-group">
                     <label>Nom de famille</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="last_name" value="<%= returningSubscription.last_name %>" required>
                 </div>
             </div>
             <hr>
             <div class="form-group">
-                <label>Adresse postale</label>
-                <input type="text" class="form-control">
-            </div>
-            <div class="row">
-                <div class="col-sm-6 form-group">
-                    <label>Ville</label>
-                    <input type="text" class="form-control">
-                </div>
-                <div class="col-sm-6 form-group">
-                    <label>Code Postal</label>
-                    <input type="text" class="form-control">
-                </div>
+                <label>Code Postal</label>
+                <input type="text" class="form-control" name="post_code" value="<%= returningSubscription.post_code %>" required>
             </div>
         <div class="form-group">
             <label>Numéro de téléphone</label>
-            <input type="text" class="form-control">
+            <input type="tel" pattern='^\+?\d{0,13}' class="form-control" name="phone_number" value="<%= returningSubscription.phone_number %>" required>
         </div>
         <hr>
         <div class="form-group">
             <label>Adresse email</label>
-            <input type="text" class="form-control">
+            <input type="email" class="form-control" name="email_address" value="<%= returningSubscription.email_address %>" required>
+        </div>
+        <div class="form-group">
+            <label>Nom d'utilisateur</label>
+            <input type="text" class="form-control" name="username" value="<%= returningSubscription.username %>" required>
         </div>
         <div class="form-group">
             <label>Mot de passe</label>
-            <input type="password" class="form-control">
+            <input type="password" class="form-control" name="password_a" required>
         </div>
         <div class="form-group">
             <label>Confirmation du mot de passe</label>
-            <input type="password" class="form-control">
+            <input type="password" class="form-control" name="password_b" required>
         </div>
-        <button type="button" class="btn btn-lg btn-info">Aller vers l'étape 2</button>
+        <button type="submit" class="btn btn-lg btn-info">Aller vers l'étape 2</button>
         </div>
     </form>
 </div>

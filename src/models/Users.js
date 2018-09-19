@@ -4,6 +4,8 @@ const {
   attachUpdateByIds
 } = require('../helpers/models');
 
+const shortid = require('shortid');
+
 const setClassMethods = Users => {
   Users.findByIds = attachFindByIds(Users);
 
@@ -19,6 +21,10 @@ const setClassMethods = Users => {
 
 module.exports = (sequelize, DataTypes) => { // NOSONAR
   const Users = sequelize.define('users', {
+
+    shortId: {
+      type: DataTypes.TEXT
+    },
 
     username: {
       type: DataTypes.TEXT,
@@ -47,25 +53,41 @@ module.exports = (sequelize, DataTypes) => { // NOSONAR
       field: 'last_name'
     },
 
+    phoneNumber: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      field: 'phone_number'
+    },
+
     language: {
       type: DataTypes.TEXT,
       allowNull: false
     },
 
     permissionsLevel: {
-      type: DataTypes.TEXT,
+      type: DataTypes.INTEGER,
       allowNull: false,
       field: 'permissions_level'
+    },
+
+    majority: {
+      type: DataTypes.BOOLEAN,
+      field: 'majority'
+    },
+
+    insurance: {
+      type: DataTypes.BOOLEAN,
+      field: 'insurance'
+    },
+
+    houseRules: {
+      type: DataTypes.BOOLEAN,
+      field: 'house_rules'
     },
 
     registerValidate: {
       type: DataTypes.BOOLEAN,
       field: 'register_validate'
-    },
-
-    level: {
-      type: DataTypes.INTEGER,
-      field: 'level'
     },
 
     createdAt: {
@@ -85,6 +107,11 @@ module.exports = (sequelize, DataTypes) => { // NOSONAR
   }, {
     timestamps: true,
     paranoid: true,
+    hooks: {
+      beforeCreate (result, options) {
+        result.shortId = shortid.generate();
+      }
+    },
     indexes: [
       {
         name: 'user_email',

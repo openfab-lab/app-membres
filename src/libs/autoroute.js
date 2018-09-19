@@ -3,16 +3,6 @@ const fs = require('fs');
 const path = require('path');
 const log = require('saga-logger').create({ module: module.id });
 
-const isJSON = (str) => {
-  try {
-    var obj = JSON.parse(str);
-    if (obj && typeof obj === 'object' && obj !== null) {
-      return true;
-    }
-  } catch (err) {}
-  return false;
-};
-
 const routeFromPaths = (basePath, filePath) =>
   filePath.substr(basePath.length).replace(/(\/index)?\.js$/i, '') || '/';
 
@@ -54,14 +44,18 @@ const createRouteHandler = (controller, action, metaList) => {
     }, {});
 
     try {
-      const result = await controller[action](options, meta);
+      const result = await controller[action](options, meta, req, res);
       const logMeta = _.pick(req, ['method', 'path', 'query', 'body']);
-      if (isJSON(result)) {
+      if (typeof result === 'object') {
+        if (result.redirect) {
+          return res.redirect(result.redirect);
+        }
+
         log.debug('API_SUCCESS', result, logMeta);
-        res.json(result);
+        return res.json(result);
       } else {
         log.debug('VIEW_SUCCESS', { html: result }, logMeta);
-        res.send(result);
+        return res.send(result);
       }
     } catch (e) {
       return next(e);
