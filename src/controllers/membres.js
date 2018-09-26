@@ -1,3 +1,4 @@
+const sequelize = require('../resources/postgresql');
 const models = require('../models');
 const views = require('../views');
 const hashEmail = require('../helpers/hashEmail');
@@ -11,10 +12,9 @@ module.exports.read = async (params, meta) => {
       where: {
         shortId: params.id
       },
+      attributes: { exclude: ['password'] },
       raw: true
     });
-
-    console.log(member);
 
     return views.render('./src/views/membre.ejs', {
       user: meta.user,
@@ -23,14 +23,14 @@ module.exports.read = async (params, meta) => {
   }
 
   const users = await models.users.findAll({
+    order: sequelize.random(),
+    attributes: { exclude: ['password'] },
     raw: true
   });
 
   users.forEach(function (user, index) {
     users[index].hashedEmail = hashEmail.hashMd5(user.email);
   });
-
-  console.log(users);
 
   return views.render('./src/views/membres.ejs', {
     user: meta.user,

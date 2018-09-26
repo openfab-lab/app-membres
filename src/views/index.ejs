@@ -1,34 +1,177 @@
 <%- include('layout/top', {page: 'index'}); %>
-   <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <h1 class="display-3">BLABLABLA</p>
-        <p><a class="btn btn-secondary btn-lg" href="#" role="button">En savoir plus &raquo;</a></p>
+<div class="jumbotron text-center" id="propos">
+  <div class="container mx-auto my-5 py-5">
+        <h1 class="display-4 mt-5">OpenFab, more than a fablab</h1>
+  </div>
+</div>
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col-sm">
+      <p class="mx-auto mt-5"><i class="material-icons md-48">settings_input_component</i></p>
+    </div>
+    <div class="col-sm text-center">
+      <p class="mx-auto mt-5"><i class="material-icons md-48">track_changes</i></p>
+    </div>
+    <div class="col-sm text-center">
+      <p class="mx-auto mt-5"><i class="material-icons md-48">group</i></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+      <p class="mx-auto mt-5 lead">OpenFab, plus qu’un fablab, c’est un atelier d'exploration, laboratoire d'innovation. Une guilde 2.0.</p>
+    </div>
+    <div class="col-sm">
+      <p class="mx-auto mt-5 lead">Un lieu pour apprendre ce dont tu as besoin, au moment où tu en a besoin.</p>
+    </div>
+    <div class="col-sm">
+      <p class="mx-auto mt-5 lead">C’est aussi plus qu’un lieu avec des outils, c’est une communauté, un collectif de makers qui travaillent ensemble.</p>
+    </div>
+  </div>
+
+  <button type="button" onclick="window.open('/inscription/etape1','_self');" class="btn btn-secondary btn-lg mt-5 mr-2">S'inscrire</button>
+  <button onclick="window.open('/contact','_self');" type="button" class="btn btn-outline-secondary btn-lg mt-5">Nous contacter</button>
+</div>
+
+<div class="container">
+<!-- FAQ -->
+
+  <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4 mt-5 pt-5" id="faq">Règles du jeu</h1>
+    <p class="lead">OpenFab est auto-géré par une communauté de membres passionné.e.s et voulant partager leurs savoirs. De ce fait, merci de respecter ce mode d'emploi.</p>
+  </div>
+
+  <div class="accordion" id="accordionExample">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Quand êtes-vous ouvert ?
+          </button>
+        </h5>
+      </div>
+
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+          OpenFab est ouvert sur <strong>rendez-vous</strong> ou lors des permanences tenues par nos membres. Ne passez pas à l'improviste, parfois personne est là. Sauf Vicky, mais vous voulez pas rencontrer Vicky. She's mean.
+        </div>
       </div>
     </div>
-
-    <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
-          <h2>BLABLA</h2>
-          <p>BLABLABLA</p>
-          <p><a class="btn btn-secondary" href="#" role="button">Voir les détails &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>BLABLA</h2>
-          <p>BLABLABLA</p>
-          <p><a class="btn btn-secondary" href="#" role="button">Voir les détails &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>BLABLA</h2>
-          <p>BLABLABLA</p>
-          <p><a class="btn btn-secondary" href="#" role="button">Voir les détails &raquo;</a></p>
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Je cherche à faire faire une pièce.
+          </button>
+        </h5>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="card-body">
+          OpenFab peut réaliser votre pièce. Mais attention, OpenFab n'est pas un prestataire de service en tant que tel. Ce sont les membres bénévoles qui réalisent les commandes. Un délai de quelques jours et donc à prévoir. Devis gratuit.
         </div>
       </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Organisez vous des formations à la découpe laser ?
+          </button>
+        </h5>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+        <div class="card-body">
+          Nous ne donnons pas de formation en tant que telle, mais nous favorisons l'échange entre pair. Il suffit d'adhérer à l'ASBL, ainsi que de payer le temps machine. Un autre membre vous accompagnera, sur rendez-vous. Envoyer une demande via contact@openfab.be.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingFour">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseTFour">
+            Je peux venir faire un stage ?
+          </button>
+        </h5>
+      </div>
+      <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+        <div class="card-body">
+          Oui ! Malheureusement nous ne pouvons pas accueillir de stagiaire rémunéré pour le moment. Mais on fera tout pour faciliter tes démarches pour venir ici. Tu choisis sur quoi tu veux travailler et c'est parti. Envoyez-nous une demande à contact@openfab.be.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingFive">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseTFive">
+            Je peux vous poser des questions sur votre modèle économique ou financier ou social ?
+          </button>
+        </h5>
+      </div>
+      <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+        <div class="card-body">
+          Si vous ne trouvez pas vos réponses déjà sur notre site web ou les autres publications. N'hésitez pas à nous contacter pour prendre rendez-vous en nous envoyant votre sujet à contact@openfab.be.
+        </div>
+      </div>
+    </div>
+  </div>
 
-      <hr>
+  <!-- Tarifs -->
+  <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center" id="tarifs">
+    <h1 class="display-4 mt-5 pt-5">Tarifs</h1>
+    <p class="lead">Les frais de fonctionnement se font sous fond propre grâce aux adhésions. Les investissements et rémunérations se font grâce aux commandes et appel à projet. En savoir plus sur notre système économique.</p>
+  </div>
 
+  <div class="card-deck mb-3 text-center">
+    <div class="card mb-4 box-shadow">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Adhésion</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">25€ <small class="text-muted">/ an</small></h1>
+        <p>Pour les particuliers, inscription annuelle à l’ASBL obligatoire pour accéder à l'atelier.</p>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>+ 10€ l'accès journée</li>
+          <li>+ 40€/h de découpe laser</li>
+          <li>+ 0,40€/g impression 3D</li>
+          <li>+ formation</li>
+          <li>&nbsp;</li>
+          <li>&nbsp;</li>
+        </ul>
+        <button onclick="window.open('/inscription/etape1','_self');" type="button" class="btn btn-lg btn-block btn-secondary">S'inscrire</button>
+      </div>
+    </div>
+    <div class="card mb-4 box-shadow">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Services</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">55€ <small class="text-muted">/ heure</small></h1>
+        <p>Nos membres réalisent pour vous. Devis sur demande. Délai min. 48h.</p>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>Conception design</li>
+          <li>Préparation de fichier</li>
+          <li>Tutorat</li>
+          <li>Impression 3D</li>
+          <li>Découpe laser</li>
+          <li>Usinage CNC</li>
+        </ul>
+        <button onclick="window.open('/contact','_self');" type="button" class="btn btn-lg btn-block btn-outline-secondary">Commencer</button>
+      </div>
+    </div>
+  </div>
 
-    </div> <!-- /container -->
+  <!-- Contact -->
+  <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center" id="contact">
+    <h1 class="display-4 mt-5 pt-5">L'atelier</h1>
+    <p class="lead">L'atelier d'OpenFab se situe au 274 avenue de la Couronne à Bruxelles. Il est équipé d'une découpeuse laser, imprimantes 3D, machines à coudre (industrielle & classique), découpeuse vinyle, outillage électroportatif, station de soudure électronique, outils bois, cuisine et hamac.</p>
+  </div>
+
+  <!-- Map -->
+  <div class="row">
+    <div class="col">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.287825788465!2d4.381949451809272!3d50.82583237942842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3c4c09d468df1%3A0xab070075b72e8d93!2sOpenFab!5e0!3m2!1sfr!2sus!4v1530606373877" width="100%" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
 <%- include('layout/bottom'); %>

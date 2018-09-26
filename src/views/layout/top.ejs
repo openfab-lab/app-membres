@@ -8,6 +8,13 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
+    <link rel="stylesheet" href="/css/custom.css">
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
     <style type="text/css">
         /* Sticky footer styles
         -------------------------------------------------- */
@@ -16,14 +23,14 @@
           min-height: 100%;
         }
         body {
-          margin-bottom: 60px; /* Margin bottom by footer height */
+          margin-bottom: 185px; /* Margin bottom by footer height */
         }
-        .footer {
-          position: absolute;
+
+        footer {
           bottom: 0;
           width: 100%;
-          height: 60px; /* Set the fixed height of the footer here */
-          line-height: 60px; /* Vertically center the text there */
+          position: absolute;
+          height: 185px; /* Set the fixed height of the footer here */
           background-color: #f5f5f5;
         }
 
@@ -39,7 +46,7 @@
   <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand mb-0 h1" href="/" target="_self">OpenFab Membres</a>
+        <a class="navbar-brand mb-0 h1" href="/" target="_self">OpenFab</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -51,6 +58,7 @@
                 </li>
             </ul>
             <% if (user) { %>
+            <% if (user.permissionsLevel === 3) { %>
             <ul class="navbar-nav my-2 my-lg-0">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin&nbsp;</a>
@@ -59,6 +67,7 @@
                     </div>
                 </li>
             </ul>
+            <% } %>
             <ul class="navbar-nav my-2 my-lg-0">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="https://www.gravatar.com/avatar/<%= user.hashedEmail %>" height="21" width="21" class="rounded-circle">&nbsp;&nbsp;<%= user.firstName %>&nbsp;<b class="caret"></b></a>
