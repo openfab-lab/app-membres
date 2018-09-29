@@ -185,6 +185,7 @@ footer{
           transform:translate3d(0,0,0);
 }
 
+
 /*** HEXAGON SIZING AND EVEN ROW INDENTATION *****************************************************************/
 @media (min-width:1201px) { /* <- 5-4  hexagons per row */
   #hexGrid{

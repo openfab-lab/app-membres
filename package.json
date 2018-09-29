@@ -47,6 +47,7 @@
     "ejs": "2.5.8",
     "express": "4.16.2",
     "lodash": "4.17.4",
+    "mailgun-js": "0.21.0",
     "passport": "0.4.0",
     "pg": "7.4.1",
     "pg-hstore": "2.3.2",
@@ -55,7 +56,7 @@
     "saga-managed-error": "1.0.0",
     "sequelize": "4.32.2",
     "serve-favicon": "2.4.5",
-    "shortid": "^2.2.13"
+    "shortid": "2.2.13"
   },
   "semistandard": {
     "globals": [

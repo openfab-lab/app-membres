@@ -2,8 +2,10 @@ const views = require('../../views');
 const models = require('../../models');
 const hashPassword = require('../../helpers/hashPassword');
 
+const view = './src/views/inscription/etape1.ejs';
+
 module.exports.read = async (params, meta) => {
-  return views.render('./src/views/inscription/etape1.ejs', {
+  return views.render(view, {
     user: meta.user,
     returningSubscription: {},
     errorMessage: null
@@ -12,7 +14,7 @@ module.exports.read = async (params, meta) => {
 
 module.exports.create = async (params, meta, req, res) => {
   if (req.body.password_a !== req.body.password_b) {
-    return views.render('./src/views/inscription/etape1.ejs', {
+    return views.render(view, {
       user: meta.user,
       returningSubscription: req.body,
       errorMessage: 'Les deux mots de passe ne correspondent pas'
@@ -34,7 +36,7 @@ module.exports.create = async (params, meta, req, res) => {
         redirect: '/inscription/etape2?id=' + result.shortId
       };
     }).catch(error => {
-      return views.render('./src/views/inscription/etape1.ejs', {
+      return views.render(view, {
         user: meta.user,
         returningSubscription: req.body,
         errorMessage: error.original.detail

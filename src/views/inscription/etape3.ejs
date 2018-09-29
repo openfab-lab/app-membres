@@ -5,6 +5,11 @@
       <h2>Etape 3</h2>
       <p>ASSURANCE</p>
     </div>
+    <% if (errorMessage) { %>
+        <div class="alert alert-danger" role="alert">
+          <%= errorMessage %>
+        </div>
+    <% } %>
     <form action="/inscription/etape3?id=<%= id %>" method="post">
         <div class="col-sm-12">
             <div class="row">

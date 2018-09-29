@@ -64,6 +64,14 @@ module.exports = (sequelize, DataTypes) => { // NOSONAR
       allowNull: false
     },
 
+    github: {
+      type: DataTypes.TEXT
+    },
+
+    bio: {
+      type: DataTypes.TEXT
+    },
+
     permissionsLevel: {
       type: DataTypes.INTEGER,
       allowNull: false,

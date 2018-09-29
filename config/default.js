@@ -15,5 +15,10 @@ module.exports = {
     hashSalt: process.env.SECURITY_HASH_SALT,
     secret: process.env.SECURITY_SECRET,
     sessionLifeTime: parseInt(process.env.SECURITY_SESSION_LIFE_TIME) || h24
+  },
+  email: {
+    apiKey: process.env.EMAIL_API_KEY,
+    domain: process.env.EMAIL_DOMAIN,
+    from: process.env.EMAIL_FROM
   }
 };

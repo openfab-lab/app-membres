@@ -1,3 +1,82 @@
 <%- include('../layout/top', {page: 'profil'}); %>
-<%= user.username %>
+<div class="card">
+    <div class="card-body">
+        <% if (errorMessage) { %>
+            <div class="alert alert-danger" role="alert">
+              <%= errorMessage %>
+            </div>
+        <% } %>
+        <% if (successMessage) { %>
+            <div class="alert alert-success" role="alert">
+              <%= successMessage %>
+            </div>
+        <% } %>
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Mon Profil</h4>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <form action="/perso/profil?id=<%= user.shortId %>" method="post">
+                  <div class="form-group row">
+                    <label for="shortId" class="col-4 col-form-label">Num&eacute;ro de passport</label>
+                    <div class="col-8">
+                      <input value="<%= user.shortId %>" class="form-control here" type="text" disabled>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="username" class="col-4 col-form-label">Nom d'utilisateur</label>
+                    <div class="col-8">
+                      <input value="<%= user.username %>" class="form-control here" type="text" disabled>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="firstName" class="col-4 col-form-label">Pr&eacute;nom</label>
+                    <div class="col-8">
+                      <input id="firstName" name="firstName" value="<%= user.firstName %>" class="form-control here" required="required" type="text">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="lastName" class="col-4 col-form-label">Nom</label>
+                    <div class="col-8">
+                      <input id="lastName" name="lastName" value="<%= user.lastName %>" class="form-control here" required="required" type="text">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="email" class="col-4 col-form-label">Email</label>
+                    <div class="col-8">
+                      <input id="email" name="email" value="<%= user.email %>" class="form-control here" required="required" type="text">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="phoneNumber" class="col-4 col-form-label">Num&eacute;ro de t&eacute;l&eacute;phone</label>
+                    <div class="col-8">
+                      <input id="phoneNumber" name="phoneNumber" value="<%= user.phoneNumber %>" class="form-control here" required="required" type="text">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="github" class="col-4 col-form-label">Nom d'utilisateur Github</label>
+                    <div class="col-8">
+                      <input id="github" name="github" value="<%= user.github %>" class="form-control here" required="required" type="text">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="bio" class="col-4 col-form-label">Petite biographie</label>
+                    <div class="col-8">
+                      <textarea id="bio" name="bio" cols="40" rows="4" class="form-control"><%= user.bio %></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="offset-4 col-8">
+                      <button name="submit" type="submit" class="btn btn-secondary">Mettre &agrave; jour mon profil</button>
+                    </div>
+                  </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
 <%- include('../layout/bottom'); %>
