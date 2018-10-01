@@ -16,24 +16,26 @@ module.exports.read = async (params, meta) => {
       raw: true
     });
 
+    member.hashedEmail = hashEmail.hashMd5(member.email);
+
     return views.render('./src/views/membre.ejs', {
       user: meta.user,
       member: member
     });
   }
 
-  const users = await models.users.findAll({
+  const membres = await models.users.findAll({
     order: sequelize.random(),
     attributes: { exclude: ['password'] },
     raw: true
   });
 
-  users.forEach(function (user, index) {
-    users[index].hashedEmail = hashEmail.hashMd5(user.email);
+  membres.forEach(function (user, index) {
+    membres[index].hashedEmail = hashEmail.hashMd5(user.email);
   });
 
   return views.render('./src/views/membres.ejs', {
     user: meta.user,
-    users
+    membres
   });
 };
