@@ -19,6 +19,7 @@ module.exports = {
   email: {
     apiKey: process.env.EMAIL_API_KEY,
     domain: process.env.EMAIL_DOMAIN,
-    from: process.env.EMAIL_FROM
+    from: process.env.EMAIL_FROM,
+    to: process.env.EMAIL_TO
   }
 };

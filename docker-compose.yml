@@ -7,6 +7,7 @@ node:
     EMAIL_API_KEY: ${EMAIL_API_KEY}
     EMAIL_DOMAIN: ${EMAIL_DOMAIN}
     EMAIL_FROM: 'Openfab <postmaster@sandbox381251d0eb4544a883475a5bff3928fe.mailgun.org>'
+    EMAIL_TO: 'louis@openfab.be'
     LOG_LEVEL: debug
     NODE_ENV: development
     PG_HOST: postgresql

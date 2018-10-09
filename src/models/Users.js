@@ -12,7 +12,6 @@ const setClassMethods = Users => {
   Users.deleteByIds = attachDeleteByIds(Users);
 
   Users.deleteCascade = async (ids, models) => {
-    // await models.awards.deleteByUserIds(ids); //TODO
     return Users.deleteByIds(ids);
   };
 
@@ -24,11 +23,6 @@ module.exports = (sequelize, DataTypes) => { // NOSONAR
 
     shortId: {
       type: DataTypes.TEXT
-    },
-
-    username: {
-      type: DataTypes.TEXT,
-      allowNull: false
     },
 
     email: {
@@ -68,6 +62,10 @@ module.exports = (sequelize, DataTypes) => { // NOSONAR
       type: DataTypes.TEXT
     },
 
+    stripeAccount: {
+      type: DataTypes.TEXT
+    },
+
     bio: {
       type: DataTypes.TEXT
     },
@@ -98,6 +96,11 @@ module.exports = (sequelize, DataTypes) => { // NOSONAR
       field: 'register_validate'
     },
 
+    registerValidUntil: {
+      type: DataTypes.DATE,
+      field: 'register_valid_until'
+    },
+
     createdAt: {
       type: DataTypes.DATE,
       field: 'created_at'
@@ -122,6 +125,11 @@ module.exports = (sequelize, DataTypes) => { // NOSONAR
     },
     indexes: [
       {
+        name: 'user_register_valid_until',
+        unique: false,
+        fields: ['register_valid_until']
+      },
+      {
         name: 'user_email',
         unique: true,
         fields: ['email'],
@@ -138,30 +146,19 @@ module.exports = (sequelize, DataTypes) => { // NOSONAR
             $ne: null
           }
         }
-      },
-      {
-        name: 'user_username',
-        unique: true,
-        fields: ['username'],
-        where: {
-          deleted_at: null
-        }
-      },
-      {
-        name: 'user_username_deletedAt',
-        unique: true,
-        fields: ['username', 'deleted_at'],
-        where: {
-          deleted_at: {
-            $ne: null
-          }
-        }
       }
     ]
-  }
-  );
+  });
 
   setClassMethods(Users);
+
+  Users.associate = models => {
+    Users.hasMany(models.projects);
+    Users.hasMany(models.bills);
+    Users.hasMany(models.subscribtions);
+    Users.hasMany(models.billingdetails);
+    Users.hasOne(models.wallets);
+  };
 
   return Users;
 };

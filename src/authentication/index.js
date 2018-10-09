@@ -9,6 +9,7 @@ const models = require('../models');
 
 const publicRoutes = {
   '/connexion': ['GET'],
+  '/contact': ['GET', 'POST'],
   '/membres': ['GET'],
   '/healthcheck': ['GET'],
   '/inscription': ['GET', 'POST']

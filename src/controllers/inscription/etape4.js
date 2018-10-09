@@ -35,7 +35,7 @@ module.exports.create = async (params, meta, req, res) => {
       from: config.email.from,
       to: result[1][0].email,
       subject: 'Hello',
-      text: 'Testing some Mailgun awesomeness!'
+      text: 'Bienvenue chez nous!'
     };
 
     return new Promise((resolve, reject) => {
@@ -50,7 +50,6 @@ module.exports.create = async (params, meta, req, res) => {
       });
     });
   }).catch(error => {
-    console.log(error);
     return views.render(view, {
       id: params.id,
       user: meta.user,

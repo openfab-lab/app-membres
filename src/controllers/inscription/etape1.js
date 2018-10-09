@@ -33,7 +33,7 @@ module.exports.create = async (params, meta, req, res) => {
   })
     .then(result => {
       return {
-        redirect: '/inscription/etape2?id=' + result.shortId
+        redirect: '/inscription/etape1b?id=' + result.shortId
       };
     }).catch(error => {
       return views.render(view, {

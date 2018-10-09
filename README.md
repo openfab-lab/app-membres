@@ -19,6 +19,16 @@ To run the tests use the command:
 docker-compose run node npm test
 ```
 
+TODO:
+
+- Members valid untill
+- Projects
+- Wallet and transactions
+- Auto sitemap
+- robots.txt
+- humans.txt
+- Import old users
+
 
 
 
