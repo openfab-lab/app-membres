@@ -22,5 +22,8 @@ module.exports = {
     from: process.env.EMAIL_FROM,
     to: process.env.EMAIL_TO,
     host: process.env.EMAIL_HOST || 'api.mailgun.net'
+  },
+  vatlayer: {
+    key: process.env.VATLAYER_KEY
   }
 };

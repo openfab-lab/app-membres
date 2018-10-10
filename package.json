@@ -52,6 +52,8 @@
     "pg": "7.4.1",
     "pg-hstore": "2.3.2",
     "qs": "6.5.0",
+    "request": "2.88.0",
+    "request-promise": "4.2.2",
     "saga-logger": "0.0.8",
     "saga-managed-error": "1.0.0",
     "sequelize": "4.32.2",

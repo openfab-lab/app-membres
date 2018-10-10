@@ -11,274 +11,274 @@
     <form action="/inscription/etape1b?id=<%= id %>" method="post">
             <div class="col-sm-6 form-group">
                 <label class="control-label">Ligne d'Adresse 1</label>
-                <input name="address_line1" type="text" class="form-control" required autofocus>
+                <input name="address_line1" value="<%= returningBillingAddress.address_line1 %>" type="text" class="form-control" required autofocus>
             </div>
             <div class="col-sm-6 form-group">
                 <label class="control-label">Ligne d'Adresse 2</label>
-                <input name="address_line2" type="text" class="form-control">
+                <input name="address_line2" value="<%= returningBillingAddress.address_line2 %>" type="text" class="form-control">
             </div>
             <div class="col-sm-6 form-group">
                 <label class="control-label">Ville</label>
-                <input name="city" type="text" class="form-control" required>
+                <input name="city" value="<%= returningBillingAddress.city %>" type="text" class="form-control" required>
             </div>
             <div class="col-sm-6 form-group">
                 <label class="control-label">Code Postal</label>
-                <input name="postal_code" type="text" class="form-control" required>
+                <input name="postal_code" value="<%= returningBillingAddress.postal_code %>" type="text" class="form-control" required>
             </div>
             <div class="col-sm-6 form-group">
                 <label class="control-label">Pays</label>
                 <select name="country" class="form-control" required>
-                    <option value="" selected="selected">(Choisissez un pays)</option>
-                    <option value="AF">Afghanistan</option>
-                    <option value="AL">Albania</option>
-                    <option value="DZ">Algeria</option>
-                    <option value="AS">American Samoa</option>
-                    <option value="AD">Andorra</option>
-                    <option value="AO">Angola</option>
-                    <option value="AI">Anguilla</option>
-                    <option value="AQ">Antarctica</option>
-                    <option value="AG">Antigua and Barbuda</option>
-                    <option value="AR">Argentina</option>
-                    <option value="AM">Armenia</option>
-                    <option value="AW">Aruba</option>
-                    <option value="AU">Australia</option>
-                    <option value="AT">Austria</option>
-                    <option value="AZ">Azerbaijan</option>
-                    <option value="BS">Bahamas</option>
-                    <option value="BH">Bahrain</option>
-                    <option value="BD">Bangladesh</option>
-                    <option value="BB">Barbados</option>
-                    <option value="BY">Belarus</option>
-                    <option value="BE">Belgium</option>
-                    <option value="BZ">Belize</option>
-                    <option value="BJ">Benin</option>
-                    <option value="BM">Bermuda</option>
-                    <option value="BT">Bhutan</option>
-                    <option value="BO">Bolivia</option>
-                    <option value="BA">Bosnia and Herzegowina</option>
-                    <option value="BW">Botswana</option>
-                    <option value="BV">Bouvet Island</option>
-                    <option value="BR">Brazil</option>
-                    <option value="IO">British Indian Ocean Territory</option>
-                    <option value="BN">Brunei Darussalam</option>
-                    <option value="BG">Bulgaria</option>
-                    <option value="BF">Burkina Faso</option>
-                    <option value="BI">Burundi</option>
-                    <option value="KH">Cambodia</option>
-                    <option value="CM">Cameroon</option>
-                    <option value="CA">Canada</option>
-                    <option value="CV">Cape Verde</option>
-                    <option value="KY">Cayman Islands</option>
-                    <option value="CF">Central African Republic</option>
-                    <option value="TD">Chad</option>
-                    <option value="CL">Chile</option>
-                    <option value="CN">China</option>
-                    <option value="CX">Christmas Island</option>
-                    <option value="CC">Cocos (Keeling) Islands</option>
-                    <option value="CO">Colombia</option>
-                    <option value="KM">Comoros</option>
-                    <option value="CG">Congo</option>
-                    <option value="CD">Congo, the Democratic Republic of the</option>
-                    <option value="CK">Cook Islands</option>
-                    <option value="CR">Costa Rica</option>
-                    <option value="CI">Cote d'Ivoire</option>
-                    <option value="HR">Croatia (Hrvatska)</option>
-                    <option value="CU">Cuba</option>
-                    <option value="CY">Cyprus</option>
-                    <option value="CZ">Czech Republic</option>
-                    <option value="DK">Denmark</option>
-                    <option value="DJ">Djibouti</option>
-                    <option value="DM">Dominica</option>
-                    <option value="DO">Dominican Republic</option>
-                    <option value="TP">East Timor</option>
-                    <option value="EC">Ecuador</option>
-                    <option value="EG">Egypt</option>
-                    <option value="SV">El Salvador</option>
-                    <option value="GQ">Equatorial Guinea</option>
-                    <option value="ER">Eritrea</option>
-                    <option value="EE">Estonia</option>
-                    <option value="ET">Ethiopia</option>
-                    <option value="FK">Falkland Islands (Malvinas)</option>
-                    <option value="FO">Faroe Islands</option>
-                    <option value="FJ">Fiji</option>
-                    <option value="FI">Finland</option>
-                    <option value="FR">France</option>
-                    <option value="FX">France, Metropolitan</option>
-                    <option value="GF">French Guiana</option>
-                    <option value="PF">French Polynesia</option>
-                    <option value="TF">French Southern Territories</option>
-                    <option value="GA">Gabon</option>
-                    <option value="GM">Gambia</option>
-                    <option value="GE">Georgia</option>
-                    <option value="DE">Germany</option>
-                    <option value="GH">Ghana</option>
-                    <option value="GI">Gibraltar</option>
-                    <option value="GR">Greece</option>
-                    <option value="GL">Greenland</option>
-                    <option value="GD">Grenada</option>
-                    <option value="GP">Guadeloupe</option>
-                    <option value="GU">Guam</option>
-                    <option value="GT">Guatemala</option>
-                    <option value="GN">Guinea</option>
-                    <option value="GW">Guinea-Bissau</option>
-                    <option value="GY">Guyana</option>
-                    <option value="HT">Haiti</option>
-                    <option value="HM">Heard and Mc Donald Islands</option>
-                    <option value="VA">Holy See (Vatican City State)</option>
-                    <option value="HN">Honduras</option>
-                    <option value="HK">Hong Kong</option>
-                    <option value="HU">Hungary</option>
-                    <option value="IS">Iceland</option>
-                    <option value="IN">India</option>
-                    <option value="ID">Indonesia</option>
-                    <option value="IR">Iran (Islamic Republic of)</option>
-                    <option value="IQ">Iraq</option>
-                    <option value="IE">Ireland</option>
-                    <option value="IL">Israel</option>
-                    <option value="IT">Italy</option>
-                    <option value="JM">Jamaica</option>
-                    <option value="JP">Japan</option>
-                    <option value="JO">Jordan</option>
-                    <option value="KZ">Kazakhstan</option>
-                    <option value="KE">Kenya</option>
-                    <option value="KI">Kiribati</option>
-                    <option value="KP">Korea, Democratic People's Republic of</option>
-                    <option value="KR">Korea, Republic of</option>
-                    <option value="KW">Kuwait</option>
-                    <option value="KG">Kyrgyzstan</option>
-                    <option value="LA">Lao People's Democratic Republic</option>
-                    <option value="LV">Latvia</option>
-                    <option value="LB">Lebanon</option>
-                    <option value="LS">Lesotho</option>
-                    <option value="LR">Liberia</option>
-                    <option value="LY">Libyan Arab Jamahiriya</option>
-                    <option value="LI">Liechtenstein</option>
-                    <option value="LT">Lithuania</option>
-                    <option value="LU">Luxembourg</option>
-                    <option value="MO">Macau</option>
-                    <option value="MK">Macedonia, The Former Yugoslav Republic of</option>
-                    <option value="MG">Madagascar</option>
-                    <option value="MW">Malawi</option>
-                    <option value="MY">Malaysia</option>
-                    <option value="MV">Maldives</option>
-                    <option value="ML">Mali</option>
-                    <option value="MT">Malta</option>
-                    <option value="MH">Marshall Islands</option>
-                    <option value="MQ">Martinique</option>
-                    <option value="MR">Mauritania</option>
-                    <option value="MU">Mauritius</option>
-                    <option value="YT">Mayotte</option>
-                    <option value="MX">Mexico</option>
-                    <option value="FM">Micronesia, Federated States of</option>
-                    <option value="MD">Moldova, Republic of</option>
-                    <option value="MC">Monaco</option>
-                    <option value="MN">Mongolia</option>
-                    <option value="MS">Montserrat</option>
-                    <option value="MA">Morocco</option>
-                    <option value="MZ">Mozambique</option>
-                    <option value="MM">Myanmar</option>
-                    <option value="NA">Namibia</option>
-                    <option value="NR">Nauru</option>
-                    <option value="NP">Nepal</option>
-                    <option value="NL">Netherlands</option>
-                    <option value="AN">Netherlands Antilles</option>
-                    <option value="NC">New Caledonia</option>
-                    <option value="NZ">New Zealand</option>
-                    <option value="NI">Nicaragua</option>
-                    <option value="NE">Niger</option>
-                    <option value="NG">Nigeria</option>
-                    <option value="NU">Niue</option>
-                    <option value="NF">Norfolk Island</option>
-                    <option value="MP">Northern Mariana Islands</option>
-                    <option value="NO">Norway</option>
-                    <option value="OM">Oman</option>
-                    <option value="PK">Pakistan</option>
-                    <option value="PW">Palau</option>
-                    <option value="PA">Panama</option>
-                    <option value="PG">Papua New Guinea</option>
-                    <option value="PY">Paraguay</option>
-                    <option value="PE">Peru</option>
-                    <option value="PH">Philippines</option>
-                    <option value="PN">Pitcairn</option>
-                    <option value="PL">Poland</option>
-                    <option value="PT">Portugal</option>
-                    <option value="PR">Puerto Rico</option>
-                    <option value="QA">Qatar</option>
-                    <option value="RE">Reunion</option>
-                    <option value="RO">Romania</option>
-                    <option value="RU">Russian Federation</option>
-                    <option value="RW">Rwanda</option>
-                    <option value="KN">Saint Kitts and Nevis</option>
-                    <option value="LC">Saint LUCIA</option>
-                    <option value="VC">Saint Vincent and the Grenadines</option>
-                    <option value="WS">Samoa</option>
-                    <option value="SM">San Marino</option>
-                    <option value="ST">Sao Tome and Principe</option>
-                    <option value="SA">Saudi Arabia</option>
-                    <option value="SN">Senegal</option>
-                    <option value="SC">Seychelles</option>
-                    <option value="SL">Sierra Leone</option>
-                    <option value="SG">Singapore</option>
-                    <option value="SK">Slovakia (Slovak Republic)</option>
-                    <option value="SI">Slovenia</option>
-                    <option value="SB">Solomon Islands</option>
-                    <option value="SO">Somalia</option>
-                    <option value="ZA">South Africa</option>
-                    <option value="GS">South Georgia and the South Sandwich Islands</option>
-                    <option value="ES">Spain</option>
-                    <option value="LK">Sri Lanka</option>
-                    <option value="SH">St. Helena</option>
-                    <option value="PM">St. Pierre and Miquelon</option>
-                    <option value="SD">Sudan</option>
-                    <option value="SR">Suriname</option>
-                    <option value="SJ">Svalbard and Jan Mayen Islands</option>
-                    <option value="SZ">Swaziland</option>
-                    <option value="SE">Sweden</option>
-                    <option value="CH">Switzerland</option>
-                    <option value="SY">Syrian Arab Republic</option>
-                    <option value="TW">Taiwan, Province of China</option>
-                    <option value="TJ">Tajikistan</option>
-                    <option value="TZ">Tanzania, United Republic of</option>
-                    <option value="TH">Thailand</option>
-                    <option value="TG">Togo</option>
-                    <option value="TK">Tokelau</option>
-                    <option value="TO">Tonga</option>
-                    <option value="TT">Trinidad and Tobago</option>
-                    <option value="TN">Tunisia</option>
-                    <option value="TR">Turkey</option>
-                    <option value="TM">Turkmenistan</option>
-                    <option value="TC">Turks and Caicos Islands</option>
-                    <option value="TV">Tuvalu</option>
-                    <option value="UG">Uganda</option>
-                    <option value="UA">Ukraine</option>
-                    <option value="AE">United Arab Emirates</option>
-                    <option value="GB">United Kingdom</option>
-                    <option value="US">United States</option>
-                    <option value="UM">United States Minor Outlying Islands</option>
-                    <option value="UY">Uruguay</option>
-                    <option value="UZ">Uzbekistan</option>
-                    <option value="VU">Vanuatu</option>
-                    <option value="VE">Venezuela</option>
-                    <option value="VN">Viet Nam</option>
-                    <option value="VG">Virgin Islands (British)</option>
-                    <option value="VI">Virgin Islands (U.S.)</option>
-                    <option value="WF">Wallis and Futuna Islands</option>
-                    <option value="EH">Western Sahara</option>
-                    <option value="YE">Yemen</option>
-                    <option value="YU">Yugoslavia</option>
-                    <option value="ZM">Zambia</option>
-                    <option value="ZW">Zimbabwe</option>
+                    <option value="" disabled <% if (!returningBillingAddress.country) { %>selected<% } %>>(Choisissez un pays)</option>
+                    <option value="AF" <% if (returningBillingAddress.country === 'AF') { %>selected<% } %>>Afghanistan</option>
+                    <option value="AL" <% if (returningBillingAddress.country === 'AL') { %>selected<% } %>>Albania</option>
+                    <option value="DZ" <% if (returningBillingAddress.country === 'DZ') { %>selected<% } %>>Algeria</option>
+                    <option value="AS" <% if (returningBillingAddress.country === 'AS') { %>selected<% } %>>American Samoa</option>
+                    <option value="AD" <% if (returningBillingAddress.country === 'AD') { %>selected<% } %>>Andorra</option>
+                    <option value="AO" <% if (returningBillingAddress.country === 'AO') { %>selected<% } %>>Angola</option>
+                    <option value="AI" <% if (returningBillingAddress.country === 'AI') { %>selected<% } %>>Anguilla</option>
+                    <option value="AQ" <% if (returningBillingAddress.country === 'AQ') { %>selected<% } %>>Antarctica</option>
+                    <option value="AG" <% if (returningBillingAddress.country === 'AG') { %>selected<% } %>>Antigua and Barbuda</option>
+                    <option value="AR" <% if (returningBillingAddress.country === 'AR') { %>selected<% } %>>Argentina</option>
+                    <option value="AM" <% if (returningBillingAddress.country === 'AM') { %>selected<% } %>>Armenia</option>
+                    <option value="AW" <% if (returningBillingAddress.country === 'AW') { %>selected<% } %>>Aruba</option>
+                    <option value="AU" <% if (returningBillingAddress.country === 'AU') { %>selected<% } %>>Australia</option>
+                    <option value="AT" <% if (returningBillingAddress.country === 'AT') { %>selected<% } %>>Austria</option>
+                    <option value="AZ" <% if (returningBillingAddress.country === 'AZ') { %>selected<% } %>>Azerbaijan</option>
+                    <option value="BS" <% if (returningBillingAddress.country === 'BS') { %>selected<% } %>>Bahamas</option>
+                    <option value="BH" <% if (returningBillingAddress.country === 'BH') { %>selected<% } %>>Bahrain</option>
+                    <option value="BD" <% if (returningBillingAddress.country === 'BD') { %>selected<% } %>>Bangladesh</option>
+                    <option value="BB" <% if (returningBillingAddress.country === 'BB') { %>selected<% } %>>Barbados</option>
+                    <option value="BY" <% if (returningBillingAddress.country === 'BY') { %>selected<% } %>>Belarus</option>
+                    <option value="BE" <% if (returningBillingAddress.country === 'BE') { %>selected<% } %>>Belgium</option>
+                    <option value="BZ" <% if (returningBillingAddress.country === 'BZ') { %>selected<% } %>>Belize</option>
+                    <option value="BJ" <% if (returningBillingAddress.country === 'BJ') { %>selected<% } %>>Benin</option>
+                    <option value="BM" <% if (returningBillingAddress.country === 'BM') { %>selected<% } %>>Bermuda</option>
+                    <option value="BT" <% if (returningBillingAddress.country === 'BT') { %>selected<% } %>>Bhutan</option>
+                    <option value="BO" <% if (returningBillingAddress.country === 'BO') { %>selected<% } %>>Bolivia</option>
+                    <option value="BA" <% if (returningBillingAddress.country === 'BA') { %>selected<% } %>>Bosnia and Herzegowina</option>
+                    <option value="BW" <% if (returningBillingAddress.country === 'BW') { %>selected<% } %>>Botswana</option>
+                    <option value="BV" <% if (returningBillingAddress.country === 'BV') { %>selected<% } %>>Bouvet Island</option>
+                    <option value="BR" <% if (returningBillingAddress.country === 'BR') { %>selected<% } %>>Brazil</option>
+                    <option value="IO" <% if (returningBillingAddress.country === 'IO') { %>selected<% } %>>British Indian Ocean Territory</option>
+                    <option value="BN" <% if (returningBillingAddress.country === 'BN') { %>selected<% } %>>Brunei Darussalam</option>
+                    <option value="BG" <% if (returningBillingAddress.country === 'BG') { %>selected<% } %>>Bulgaria</option>
+                    <option value="BF" <% if (returningBillingAddress.country === 'BF') { %>selected<% } %>>Burkina Faso</option>
+                    <option value="BI" <% if (returningBillingAddress.country === 'BI') { %>selected<% } %>>Burundi</option>
+                    <option value="KH" <% if (returningBillingAddress.country === 'KH') { %>selected<% } %>>Cambodia</option>
+                    <option value="CM" <% if (returningBillingAddress.country === 'CM') { %>selected<% } %>>Cameroon</option>
+                    <option value="CA" <% if (returningBillingAddress.country === 'CA') { %>selected<% } %>>Canada</option>
+                    <option value="CV" <% if (returningBillingAddress.country === 'CV') { %>selected<% } %>>Cape Verde</option>
+                    <option value="KY" <% if (returningBillingAddress.country === 'KY') { %>selected<% } %>>Cayman Islands</option>
+                    <option value="CF" <% if (returningBillingAddress.country === 'CF') { %>selected<% } %>>Central African Republic</option>
+                    <option value="TD" <% if (returningBillingAddress.country === 'TD') { %>selected<% } %>>Chad</option>
+                    <option value="CL" <% if (returningBillingAddress.country === 'CL') { %>selected<% } %>>Chile</option>
+                    <option value="CN" <% if (returningBillingAddress.country === 'CN') { %>selected<% } %>>China</option>
+                    <option value="CX" <% if (returningBillingAddress.country === 'CX') { %>selected<% } %>>Christmas Island</option>
+                    <option value="CC" <% if (returningBillingAddress.country === 'CC') { %>selected<% } %>>Cocos (Keeling) Islands</option>
+                    <option value="CO" <% if (returningBillingAddress.country === 'CO') { %>selected<% } %>>Colombia</option>
+                    <option value="KM" <% if (returningBillingAddress.country === 'KM') { %>selected<% } %>>Comoros</option>
+                    <option value="CG" <% if (returningBillingAddress.country === 'CG') { %>selected<% } %>>Congo</option>
+                    <option value="CD" <% if (returningBillingAddress.country === 'CD') { %>selected<% } %>>Congo, the Democratic Republic of the</option>
+                    <option value="CK" <% if (returningBillingAddress.country === 'CK') { %>selected<% } %>>Cook Islands</option>
+                    <option value="CR" <% if (returningBillingAddress.country === 'CR') { %>selected<% } %>>Costa Rica</option>
+                    <option value="CI" <% if (returningBillingAddress.country === 'CI') { %>selected<% } %>>Cote d'Ivoire</option>
+                    <option value="HR" <% if (returningBillingAddress.country === 'HR') { %>selected<% } %>>Croatia (Hrvatska)</option>
+                    <option value="CU" <% if (returningBillingAddress.country === 'CU') { %>selected<% } %>>Cuba</option>
+                    <option value="CY" <% if (returningBillingAddress.country === 'CY') { %>selected<% } %>>Cyprus</option>
+                    <option value="CZ" <% if (returningBillingAddress.country === 'CZ') { %>selected<% } %>>Czech Republic</option>
+                    <option value="DK" <% if (returningBillingAddress.country === 'DK') { %>selected<% } %>>Denmark</option>
+                    <option value="DJ" <% if (returningBillingAddress.country === 'DJ') { %>selected<% } %>>Djibouti</option>
+                    <option value="DM" <% if (returningBillingAddress.country === 'DM') { %>selected<% } %>>Dominica</option>
+                    <option value="DO" <% if (returningBillingAddress.country === 'DO') { %>selected<% } %>>Dominican Republic</option>
+                    <option value="TP" <% if (returningBillingAddress.country === 'TP') { %>selected<% } %>>East Timor</option>
+                    <option value="EC" <% if (returningBillingAddress.country === 'EC') { %>selected<% } %>>Ecuador</option>
+                    <option value="EG" <% if (returningBillingAddress.country === 'EG') { %>selected<% } %>>Egypt</option>
+                    <option value="SV" <% if (returningBillingAddress.country === 'SV') { %>selected<% } %>>El Salvador</option>
+                    <option value="GQ" <% if (returningBillingAddress.country === 'GQ') { %>selected<% } %>>Equatorial Guinea</option>
+                    <option value="ER" <% if (returningBillingAddress.country === 'ER') { %>selected<% } %>>Eritrea</option>
+                    <option value="EE" <% if (returningBillingAddress.country === 'EE') { %>selected<% } %>>Estonia</option>
+                    <option value="ET" <% if (returningBillingAddress.country === 'ET') { %>selected<% } %>>Ethiopia</option>
+                    <option value="FK" <% if (returningBillingAddress.country === 'FK') { %>selected<% } %>>Falkland Islands (Malvinas)</option>
+                    <option value="FO" <% if (returningBillingAddress.country === 'FO') { %>selected<% } %>>Faroe Islands</option>
+                    <option value="FJ" <% if (returningBillingAddress.country === 'FJ') { %>selected<% } %>>Fiji</option>
+                    <option value="FI" <% if (returningBillingAddress.country === 'FI') { %>selected<% } %>>Finland</option>
+                    <option value="FR" <% if (returningBillingAddress.country === 'FR') { %>selected<% } %>>France</option>
+                    <option value="FX" <% if (returningBillingAddress.country === 'FX') { %>selected<% } %>>France, Metropolitan</option>
+                    <option value="GF" <% if (returningBillingAddress.country === 'GF') { %>selected<% } %>>French Guiana</option>
+                    <option value="PF" <% if (returningBillingAddress.country === 'PF') { %>selected<% } %>>French Polynesia</option>
+                    <option value="TF" <% if (returningBillingAddress.country === 'TF') { %>selected<% } %>>French Southern Territories</option>
+                    <option value="GA" <% if (returningBillingAddress.country === 'GA') { %>selected<% } %>>Gabon</option>
+                    <option value="GM" <% if (returningBillingAddress.country === 'GM') { %>selected<% } %>>Gambia</option>
+                    <option value="GE" <% if (returningBillingAddress.country === 'GE') { %>selected<% } %>>Georgia</option>
+                    <option value="DE" <% if (returningBillingAddress.country === 'DE') { %>selected<% } %>>Germany</option>
+                    <option value="GH" <% if (returningBillingAddress.country === 'GH') { %>selected<% } %>>Ghana</option>
+                    <option value="GI" <% if (returningBillingAddress.country === 'GI') { %>selected<% } %>>Gibraltar</option>
+                    <option value="GR" <% if (returningBillingAddress.country === 'GR') { %>selected<% } %>>Greece</option>
+                    <option value="GL" <% if (returningBillingAddress.country === 'GL') { %>selected<% } %>>Greenland</option>
+                    <option value="GD" <% if (returningBillingAddress.country === 'GD') { %>selected<% } %>>Grenada</option>
+                    <option value="GP" <% if (returningBillingAddress.country === 'GP') { %>selected<% } %>>Guadeloupe</option>
+                    <option value="GU" <% if (returningBillingAddress.country === 'GU') { %>selected<% } %>>Guam</option>
+                    <option value="GT" <% if (returningBillingAddress.country === 'GT') { %>selected<% } %>>Guatemala</option>
+                    <option value="GN" <% if (returningBillingAddress.country === 'GN') { %>selected<% } %>>Guinea</option>
+                    <option value="GW" <% if (returningBillingAddress.country === 'GW') { %>selected<% } %>>Guinea-Bissau</option>
+                    <option value="GY" <% if (returningBillingAddress.country === 'GY') { %>selected<% } %>>Guyana</option>
+                    <option value="HT" <% if (returningBillingAddress.country === 'HT') { %>selected<% } %>>Haiti</option>
+                    <option value="HM" <% if (returningBillingAddress.country === 'HM') { %>selected<% } %>>Heard and Mc Donald Islands</option>
+                    <option value="VA" <% if (returningBillingAddress.country === 'VA') { %>selected<% } %>>Holy See (Vatican City State)</option>
+                    <option value="HN" <% if (returningBillingAddress.country === 'HN') { %>selected<% } %>>Honduras</option>
+                    <option value="HK" <% if (returningBillingAddress.country === 'HK') { %>selected<% } %>>Hong Kong</option>
+                    <option value="HU" <% if (returningBillingAddress.country === 'HU') { %>selected<% } %>>Hungary</option>
+                    <option value="IS" <% if (returningBillingAddress.country === 'IS') { %>selected<% } %>>Iceland</option>
+                    <option value="IN" <% if (returningBillingAddress.country === 'IN') { %>selected<% } %>>India</option>
+                    <option value="ID" <% if (returningBillingAddress.country === 'ID') { %>selected<% } %>>Indonesia</option>
+                    <option value="IR" <% if (returningBillingAddress.country === 'IR') { %>selected<% } %>>Iran (Islamic Republic of)</option>
+                    <option value="IQ" <% if (returningBillingAddress.country === 'IQ') { %>selected<% } %>>Iraq</option>
+                    <option value="IE" <% if (returningBillingAddress.country === 'IE') { %>selected<% } %>>Ireland</option>
+                    <option value="IL" <% if (returningBillingAddress.country === 'IL') { %>selected<% } %>>Israel</option>
+                    <option value="IT" <% if (returningBillingAddress.country === 'IT') { %>selected<% } %>>Italy</option>
+                    <option value="JM" <% if (returningBillingAddress.country === 'JM') { %>selected<% } %>>Jamaica</option>
+                    <option value="JP" <% if (returningBillingAddress.country === 'JP') { %>selected<% } %>>Japan</option>
+                    <option value="JO" <% if (returningBillingAddress.country === 'JO') { %>selected<% } %>>Jordan</option>
+                    <option value="KZ" <% if (returningBillingAddress.country === 'KZ') { %>selected<% } %>>Kazakhstan</option>
+                    <option value="KE" <% if (returningBillingAddress.country === 'KE') { %>selected<% } %>>Kenya</option>
+                    <option value="KI" <% if (returningBillingAddress.country === 'KI') { %>selected<% } %>>Kiribati</option>
+                    <option value="KP" <% if (returningBillingAddress.country === 'KP') { %>selected<% } %>>Korea, Democratic People's Republic of</option>
+                    <option value="KR" <% if (returningBillingAddress.country === 'KR') { %>selected<% } %>>Korea, Republic of</option>
+                    <option value="KW" <% if (returningBillingAddress.country === 'KW') { %>selected<% } %>>Kuwait</option>
+                    <option value="KG" <% if (returningBillingAddress.country === 'KG') { %>selected<% } %>>Kyrgyzstan</option>
+                    <option value="LA" <% if (returningBillingAddress.country === 'LA') { %>selected<% } %>>Lao People's Democratic Republic</option>
+                    <option value="LV" <% if (returningBillingAddress.country === 'LV') { %>selected<% } %>>Latvia</option>
+                    <option value="LB" <% if (returningBillingAddress.country === 'LB') { %>selected<% } %>>Lebanon</option>
+                    <option value="LS" <% if (returningBillingAddress.country === 'LS') { %>selected<% } %>>Lesotho</option>
+                    <option value="LR" <% if (returningBillingAddress.country === 'LR') { %>selected<% } %>>Liberia</option>
+                    <option value="LY" <% if (returningBillingAddress.country === 'LY') { %>selected<% } %>>Libyan Arab Jamahiriya</option>
+                    <option value="LI" <% if (returningBillingAddress.country === 'LI') { %>selected<% } %>>Liechtenstein</option>
+                    <option value="LT" <% if (returningBillingAddress.country === 'LT') { %>selected<% } %>>Lithuania</option>
+                    <option value="LU" <% if (returningBillingAddress.country === 'LU') { %>selected<% } %>>Luxembourg</option>
+                    <option value="MO" <% if (returningBillingAddress.country === 'MO') { %>selected<% } %>>Macau</option>
+                    <option value="MK" <% if (returningBillingAddress.country === 'MK') { %>selected<% } %>>Macedonia, The Former Yugoslav Republic of</option>
+                    <option value="MG" <% if (returningBillingAddress.country === 'MG') { %>selected<% } %>>Madagascar</option>
+                    <option value="MW" <% if (returningBillingAddress.country === 'MW') { %>selected<% } %>>Malawi</option>
+                    <option value="MY" <% if (returningBillingAddress.country === 'MY') { %>selected<% } %>>Malaysia</option>
+                    <option value="MV" <% if (returningBillingAddress.country === 'MV') { %>selected<% } %>>Maldives</option>
+                    <option value="ML" <% if (returningBillingAddress.country === 'ML') { %>selected<% } %>>Mali</option>
+                    <option value="MT" <% if (returningBillingAddress.country === 'MT') { %>selected<% } %>>Malta</option>
+                    <option value="MH" <% if (returningBillingAddress.country === 'MH') { %>selected<% } %>>Marshall Islands</option>
+                    <option value="MQ" <% if (returningBillingAddress.country === 'MQ') { %>selected<% } %>>Martinique</option>
+                    <option value="MR" <% if (returningBillingAddress.country === 'MR') { %>selected<% } %>>Mauritania</option>
+                    <option value="MU" <% if (returningBillingAddress.country === 'MU') { %>selected<% } %>>Mauritius</option>
+                    <option value="YT" <% if (returningBillingAddress.country === 'YT') { %>selected<% } %>>Mayotte</option>
+                    <option value="MX" <% if (returningBillingAddress.country === 'MX') { %>selected<% } %>>Mexico</option>
+                    <option value="FM" <% if (returningBillingAddress.country === 'FM') { %>selected<% } %>>Micronesia, Federated States of</option>
+                    <option value="MD" <% if (returningBillingAddress.country === 'MD') { %>selected<% } %>>Moldova, Republic of</option>
+                    <option value="MC" <% if (returningBillingAddress.country === 'MC') { %>selected<% } %>>Monaco</option>
+                    <option value="MN" <% if (returningBillingAddress.country === 'MN') { %>selected<% } %>>Mongolia</option>
+                    <option value="MS" <% if (returningBillingAddress.country === 'MS') { %>selected<% } %>>Montserrat</option>
+                    <option value="MA" <% if (returningBillingAddress.country === 'MA') { %>selected<% } %>>Morocco</option>
+                    <option value="MZ" <% if (returningBillingAddress.country === 'MZ') { %>selected<% } %>>Mozambique</option>
+                    <option value="MM" <% if (returningBillingAddress.country === 'MM') { %>selected<% } %>>Myanmar</option>
+                    <option value="NA" <% if (returningBillingAddress.country === 'NA') { %>selected<% } %>>Namibia</option>
+                    <option value="NR" <% if (returningBillingAddress.country === 'NR') { %>selected<% } %>>Nauru</option>
+                    <option value="NP" <% if (returningBillingAddress.country === 'NP') { %>selected<% } %>>Nepal</option>
+                    <option value="NL" <% if (returningBillingAddress.country === 'NL') { %>selected<% } %>>Netherlands</option>
+                    <option value="AN" <% if (returningBillingAddress.country === 'AN') { %>selected<% } %>>Netherlands Antilles</option>
+                    <option value="NC" <% if (returningBillingAddress.country === 'NC') { %>selected<% } %>>New Caledonia</option>
+                    <option value="NZ" <% if (returningBillingAddress.country === 'NZ') { %>selected<% } %>>New Zealand</option>
+                    <option value="NI" <% if (returningBillingAddress.country === 'NI') { %>selected<% } %>>Nicaragua</option>
+                    <option value="NE" <% if (returningBillingAddress.country === 'NE') { %>selected<% } %>>Niger</option>
+                    <option value="NG" <% if (returningBillingAddress.country === 'NG') { %>selected<% } %>>Nigeria</option>
+                    <option value="NU" <% if (returningBillingAddress.country === 'NU') { %>selected<% } %>>Niue</option>
+                    <option value="NF" <% if (returningBillingAddress.country === 'NF') { %>selected<% } %>>Norfolk Island</option>
+                    <option value="MP" <% if (returningBillingAddress.country === 'MP') { %>selected<% } %>>Northern Mariana Islands</option>
+                    <option value="NO" <% if (returningBillingAddress.country === 'NO') { %>selected<% } %>>Norway</option>
+                    <option value="OM" <% if (returningBillingAddress.country === 'OM') { %>selected<% } %>>Oman</option>
+                    <option value="PK" <% if (returningBillingAddress.country === 'PK') { %>selected<% } %>>Pakistan</option>
+                    <option value="PW" <% if (returningBillingAddress.country === 'PW') { %>selected<% } %>>Palau</option>
+                    <option value="PA" <% if (returningBillingAddress.country === 'PA') { %>selected<% } %>>Panama</option>
+                    <option value="PG" <% if (returningBillingAddress.country === 'PG') { %>selected<% } %>>Papua New Guinea</option>
+                    <option value="PY" <% if (returningBillingAddress.country === 'PY') { %>selected<% } %>>Paraguay</option>
+                    <option value="PE" <% if (returningBillingAddress.country === 'PE') { %>selected<% } %>>Peru</option>
+                    <option value="PH" <% if (returningBillingAddress.country === 'PH') { %>selected<% } %>>Philippines</option>
+                    <option value="PN" <% if (returningBillingAddress.country === 'PN') { %>selected<% } %>>Pitcairn</option>
+                    <option value="PL" <% if (returningBillingAddress.country === 'PL') { %>selected<% } %>>Poland</option>
+                    <option value="PT" <% if (returningBillingAddress.country === 'PT') { %>selected<% } %>>Portugal</option>
+                    <option value="PR" <% if (returningBillingAddress.country === 'PR') { %>selected<% } %>>Puerto Rico</option>
+                    <option value="QA" <% if (returningBillingAddress.country === 'QA') { %>selected<% } %>>Qatar</option>
+                    <option value="RE" <% if (returningBillingAddress.country === 'RE') { %>selected<% } %>>Reunion</option>
+                    <option value="RO" <% if (returningBillingAddress.country === 'RO') { %>selected<% } %>>Romania</option>
+                    <option value="RU" <% if (returningBillingAddress.country === 'RU') { %>selected<% } %>>Russian Federation</option>
+                    <option value="RW" <% if (returningBillingAddress.country === 'RW') { %>selected<% } %>>Rwanda</option>
+                    <option value="KN" <% if (returningBillingAddress.country === 'KN') { %>selected<% } %>>Saint Kitts and Nevis</option>
+                    <option value="LC" <% if (returningBillingAddress.country === 'LC') { %>selected<% } %>>Saint LUCIA</option>
+                    <option value="VC" <% if (returningBillingAddress.country === 'VC') { %>selected<% } %>>Saint Vincent and the Grenadines</option>
+                    <option value="WS" <% if (returningBillingAddress.country === 'WS') { %>selected<% } %>>Samoa</option>
+                    <option value="SM" <% if (returningBillingAddress.country === 'SM') { %>selected<% } %>>San Marino</option>
+                    <option value="ST" <% if (returningBillingAddress.country === 'ST') { %>selected<% } %>>Sao Tome and Principe</option>
+                    <option value="SA" <% if (returningBillingAddress.country === 'SA') { %>selected<% } %>>Saudi Arabia</option>
+                    <option value="SN" <% if (returningBillingAddress.country === 'SN') { %>selected<% } %>>Senegal</option>
+                    <option value="SC" <% if (returningBillingAddress.country === 'SC') { %>selected<% } %>>Seychelles</option>
+                    <option value="SL" <% if (returningBillingAddress.country === 'SL') { %>selected<% } %>>Sierra Leone</option>
+                    <option value="SG" <% if (returningBillingAddress.country === 'SG') { %>selected<% } %>>Singapore</option>
+                    <option value="SK" <% if (returningBillingAddress.country === 'SK') { %>selected<% } %>>Slovakia (Slovak Republic)</option>
+                    <option value="SI" <% if (returningBillingAddress.country === 'SI') { %>selected<% } %>>Slovenia</option>
+                    <option value="SB" <% if (returningBillingAddress.country === 'SB') { %>selected<% } %>>Solomon Islands</option>
+                    <option value="SO" <% if (returningBillingAddress.country === 'SO') { %>selected<% } %>>Somalia</option>
+                    <option value="ZA" <% if (returningBillingAddress.country === 'ZA') { %>selected<% } %>>South Africa</option>
+                    <option value="GS" <% if (returningBillingAddress.country === 'GS') { %>selected<% } %>>South Georgia and the South Sandwich Islands</option>
+                    <option value="ES" <% if (returningBillingAddress.country === 'ES') { %>selected<% } %>>Spain</option>
+                    <option value="LK" <% if (returningBillingAddress.country === 'LK') { %>selected<% } %>>Sri Lanka</option>
+                    <option value="SH" <% if (returningBillingAddress.country === 'SH') { %>selected<% } %>>St. Helena</option>
+                    <option value="PM" <% if (returningBillingAddress.country === 'PM') { %>selected<% } %>>St. Pierre and Miquelon</option>
+                    <option value="SD" <% if (returningBillingAddress.country === 'SD') { %>selected<% } %>>Sudan</option>
+                    <option value="SR" <% if (returningBillingAddress.country === 'SR') { %>selected<% } %>>Suriname</option>
+                    <option value="SJ" <% if (returningBillingAddress.country === 'SJ') { %>selected<% } %>>Svalbard and Jan Mayen Islands</option>
+                    <option value="SZ" <% if (returningBillingAddress.country === 'SZ') { %>selected<% } %>>Swaziland</option>
+                    <option value="SE" <% if (returningBillingAddress.country === 'SE') { %>selected<% } %>>Sweden</option>
+                    <option value="CH" <% if (returningBillingAddress.country === 'CH') { %>selected<% } %>>Switzerland</option>
+                    <option value="SY" <% if (returningBillingAddress.country === 'SY') { %>selected<% } %>>Syrian Arab Republic</option>
+                    <option value="TW" <% if (returningBillingAddress.country === 'TW') { %>selected<% } %>>Taiwan, Province of China</option>
+                    <option value="TJ" <% if (returningBillingAddress.country === 'TJ') { %>selected<% } %>>Tajikistan</option>
+                    <option value="TZ" <% if (returningBillingAddress.country === 'TZ') { %>selected<% } %>>Tanzania, United Republic of</option>
+                    <option value="TH" <% if (returningBillingAddress.country === 'TH') { %>selected<% } %>>Thailand</option>
+                    <option value="TG" <% if (returningBillingAddress.country === 'TG') { %>selected<% } %>>Togo</option>
+                    <option value="TK" <% if (returningBillingAddress.country === 'TK') { %>selected<% } %>>Tokelau</option>
+                    <option value="TO" <% if (returningBillingAddress.country === 'TO') { %>selected<% } %>>Tonga</option>
+                    <option value="TT" <% if (returningBillingAddress.country === 'TT') { %>selected<% } %>>Trinidad and Tobago</option>
+                    <option value="TN" <% if (returningBillingAddress.country === 'TN') { %>selected<% } %>>Tunisia</option>
+                    <option value="TR" <% if (returningBillingAddress.country === 'TR') { %>selected<% } %>>Turkey</option>
+                    <option value="TM" <% if (returningBillingAddress.country === 'TM') { %>selected<% } %>>Turkmenistan</option>
+                    <option value="TC" <% if (returningBillingAddress.country === 'TC') { %>selected<% } %>>Turks and Caicos Islands</option>
+                    <option value="TV" <% if (returningBillingAddress.country === 'TV') { %>selected<% } %>>Tuvalu</option>
+                    <option value="UG" <% if (returningBillingAddress.country === 'UG') { %>selected<% } %>>Uganda</option>
+                    <option value="UA" <% if (returningBillingAddress.country === 'UA') { %>selected<% } %>>Ukraine</option>
+                    <option value="AE" <% if (returningBillingAddress.country === 'AE') { %>selected<% } %>>United Arab Emirates</option>
+                    <option value="GB" <% if (returningBillingAddress.country === 'GB') { %>selected<% } %>>United Kingdom</option>
+                    <option value="US" <% if (returningBillingAddress.country === 'US') { %>selected<% } %>>United States</option>
+                    <option value="UM" <% if (returningBillingAddress.country === 'UM') { %>selected<% } %>>United States Minor Outlying Islands</option>
+                    <option value="UY" <% if (returningBillingAddress.country === 'UY') { %>selected<% } %>>Uruguay</option>
+                    <option value="UZ" <% if (returningBillingAddress.country === 'UZ') { %>selected<% } %>>Uzbekistan</option>
+                    <option value="VU" <% if (returningBillingAddress.country === 'VU') { %>selected<% } %>>Vanuatu</option>
+                    <option value="VE" <% if (returningBillingAddress.country === 'VE') { %>selected<% } %>>Venezuela</option>
+                    <option value="VN" <% if (returningBillingAddress.country === 'VN') { %>selected<% } %>>Viet Nam</option>
+                    <option value="VG" <% if (returningBillingAddress.country === 'VG') { %>selected<% } %>>Virgin Islands (British)</option>
+                    <option value="VI" <% if (returningBillingAddress.country === 'VI') { %>selected<% } %>>Virgin Islands (U.S.)</option>
+                    <option value="WF" <% if (returningBillingAddress.country === 'WF') { %>selected<% } %>>Wallis and Futuna Islands</option>
+                    <option value="EH" <% if (returningBillingAddress.country === 'EH') { %>selected<% } %>>Western Sahara</option>
+                    <option value="YE" <% if (returningBillingAddress.country === 'YE') { %>selected<% } %>>Yemen</option>
+                    <option value="YU" <% if (returningBillingAddress.country === 'YU') { %>selected<% } %>>Yugoslavia</option>
+                    <option value="ZM" <% if (returningBillingAddress.country === 'ZM') { %>selected<% } %>>Zambia</option>
+                    <option value="ZW" <% if (returningBillingAddress.country === 'ZW') { %>selected<% } %>>Zimbabwe</option>
                 </select>
             </div>
             <hr>
             <p>Si tu t'inscrits comme une entreprise :</p>
             <div class="col-sm-6 form-group">
                 <label class="control-label">Nom de l'entreprise</label>
-                <input name="company_name" type="text" class="form-control">
+                <input name="company_name" type="text" value="<%= returningBillingAddress.company_name %>" class="form-control">
             </div>
             <div class="col-sm-6 form-group">
-                <label class="control-label">Numéro de TVA</label>
-                <input name="vat_number" type="text" class="form-control">
+                <label class="control-label">Numéro de TVA (au format BEXXXXXXXXXX sans points)</label>
+                <input name="vat_number" type="text" value="<%= returningBillingAddress.vat_number %>" class="form-control" pattern='^(ATU[0-9]{8}|BE0[0-9]{9}|BG[0-9]{9,10}|CY[0-9]{8}L|CZ[0-9]{8,10}|DE[0-9]{9}|DK[0-9]{8}|EE[0-9]{9}|(EL|GR)[0-9]{9}|ES[0-9A-Z][0-9]{7}[0-9A-Z]|FI[0-9]{8}|FR[0-9A-Z]{2}[0-9]{9}|GB([0-9]{9}([0-9]{3})?|[A-Z]{2}[0-9]{3})|HU[0-9]{8}|IE[0-9]S[0-9]{5}L|IT[0-9]{11}|LT([0-9]{9}|[0-9]{12})|LU[0-9]{8}|LV[0-9]{11}|MT[0-9]{8}|NL[0-9]{9}B[0-9]{2}|PL[0-9]{10}|PT[0-9]{9}|RO[0-9]{2,10}|SE[0-9]{12}|SI[0-9]{8}|SK[0-9]{10})$'>
             </div>
             <hr>
             <button type="submit" class="btn btn-lg btn-secondary">Aller vers l'étape 2</button>

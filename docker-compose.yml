@@ -15,6 +15,7 @@ node:
     PG_DB: postgres
     SECURITY_HASH_SALT: openfabiswatchingus
     SECURITY_SECRET: openfabiswatchingus
+    VATLAYER_KEY: ${VATLAYER_KEY}
   ports:
     - "19461:17461"
   volumes:

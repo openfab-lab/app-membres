@@ -25,9 +25,12 @@ TODO:
 - Projects
 - Wallet and transactions
 - Auto sitemap
+- Reset passowrd
 - robots.txt
 - humans.txt
 - Import old users
+- Coupons to master subscriptions
+- Logger
 
 
 

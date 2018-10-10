@@ -50,7 +50,6 @@ module.exports.create = async (params, meta, req, res) => {
       raw: true
     }
   ).then(result => {
-    console.log(result);
     result[1][0].hashedEmail = hashEmail.hashMd5(result[1][0].email);
     return views.render(view, {
       id: params.id,

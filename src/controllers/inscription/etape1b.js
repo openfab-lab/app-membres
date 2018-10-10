@@ -1,47 +1,63 @@
 const views = require('../../views');
 const models = require('../../models');
 
+const vatlayer = require('../../resources/vatlayer');
+
 const view = './src/views/inscription/etape1b.ejs';
 
 module.exports.read = async (params, meta) => {
   return views.render(view, {
     id: params.id,
     user: meta.user,
-    returningSubscription: {},
+    returningBillingAddress: {},
     errorMessage: null
   });
 };
 
 module.exports.create = async (params, meta, req, res) => {
-  return models.users.find({
-    where: {
-      shortId: params.id
-    },
-    attributes: { exclude: ['password'] },
-    raw: true
-  }).then(user => {
+  let validVAT = true;
+
+  if (params.vat_number.length > 0) {
+    validVAT = await vatlayer.validateVAT(params.vat_number);
+  }
+
+  if (validVAT) {
+    const user = await models.users.find({
+      where: {
+        shortId: params.id
+      },
+      attributes: { exclude: ['password'] },
+      raw: true
+    });
+
     return models.billingdetails.create({
-      company: req.body.company_name,
+      company: params.company_name,
       inTheNameOf: `${user.firstName} ${user.lastName}`,
-      vat: req.body.vat_number,
-      address1: req.body.address_line1,
-      address2: req.body.address_line2,
-      postcode: req.body.postal_code,
-      city: req.body.city,
-      country: req.body.country,
+      vat: params.vat_number,
+      address1: params.address_line1,
+      address2: params.address_line2,
+      postcode: params.postal_code,
+      city: params.city,
+      country: params.country,
       userId: user.id
-    })
-      .then(result => {
-        return {
-          redirect: '/inscription/etape2?id=' + params.id
-        };
-      }).catch(error => {
-        return views.render(view, {
-          id: params.id,
-          user: meta.user,
-          returningSubscription: req.body,
-          errorMessage: error
-        });
+    }).then(result => {
+      return {
+        redirect: '/inscription/etape2?id=' + params.id
+      };
+    }).catch(error => {
+      return views.render(view, {
+        id: params.id,
+        user: meta.user,
+        returningBillingAddress: params,
+        errorMessage: error
       });
-  });
+    });
+  } else {
+    return views.render(view, {
+      id: params.id,
+      user: meta.user,
+      returningBillingAddress: params,
+      errorMessage: 'Le numéro de TVA est invalide'
+    });
+  }
 };

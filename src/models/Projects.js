@@ -42,12 +42,6 @@ module.exports = (sequelize, DataTypes) => { // NOSONAR
       allowNull: false
     },
 
-    picture: {
-      type: DataTypes.TEXT,
-      allowNull: false,
-      field: 'first_name'
-    },
-
     createdAt: {
       type: DataTypes.DATE,
       field: 'created_at'

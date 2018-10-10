@@ -18,8 +18,16 @@ module.exports.read = async (params, meta) => {
 
     member.hashedEmail = hashEmail.hashMd5(member.email);
 
+    const projects = await models.projects.findAll({
+      where: {
+        userId: member.id
+      },
+      raw: true
+    });
+
     return views.render('./src/views/membre.ejs', {
       user: meta.user,
+      projects: projects,
       member: member
     });
   }
