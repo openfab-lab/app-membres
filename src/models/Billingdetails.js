@@ -21,9 +21,8 @@ const setClassMethods = Billingdetails => {
 module.exports = (sequelize, DataTypes) => { // NOSONAR
   const Billingdetails = sequelize.define('billingdetails', {
 
-    shortid: {
+    shortId: {
       type: DataTypes.TEXT,
-      allowNull: false,
       unique: 'billingdetails_short_id'
     },
 

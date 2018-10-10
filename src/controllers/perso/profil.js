@@ -5,15 +5,25 @@ const hashEmail = require('../../helpers/hashEmail');
 const view = './src/views/perso/profil.ejs';
 
 module.exports.read = async (params, meta) => {
-  return views.render(view, {
-    user: meta.user,
-    errorMessage: null,
-    successMessage: null
+  return models.users.find({
+    where: {
+      passportId: meta.user.passportId
+    },
+    attributes: { exclude: ['password'] },
+    raw: true
+  }).then(user => {
+    user.hashedEmail = hashEmail.hashMd5(user.email);
+
+    return views.render(view, {
+      user: user,
+      errorMessage: null,
+      successMessage: null
+    });
   });
 };
 
 module.exports.create = async (params, meta, req, res) => {
-  if (params.id !== meta.user.shortId) {
+  if (params.id !== meta.user.passportId) {
     return views.render(view, {
       user: meta.user,
       returningSubscription: req.body,
@@ -21,6 +31,8 @@ module.exports.create = async (params, meta, req, res) => {
       successMessage: null
     });
   }
+
+  console.log(params);
 
   return models.users.update(
     {
@@ -32,12 +44,13 @@ module.exports.create = async (params, meta, req, res) => {
       bio: params.bio
     }, {
       where: {
-        shortId: params.id
+        passportId: params.id
       },
       returning: true,
       raw: true
     }
   ).then(result => {
+    console.log(result);
     result[1][0].hashedEmail = hashEmail.hashMd5(result[1][0].email);
     return views.render(view, {
       id: params.id,

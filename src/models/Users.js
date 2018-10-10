@@ -25,6 +25,10 @@ module.exports = (sequelize, DataTypes) => { // NOSONAR
       type: DataTypes.TEXT
     },
 
+    passportId: {
+      type: DataTypes.TEXT
+    },
+
     email: {
       type: DataTypes.TEXT,
       allowNull: false
@@ -121,6 +125,7 @@ module.exports = (sequelize, DataTypes) => { // NOSONAR
     hooks: {
       beforeCreate (result, options) {
         result.shortId = shortid.generate();
+        result.passportId = shortid.generate();
       }
     },
     indexes: [

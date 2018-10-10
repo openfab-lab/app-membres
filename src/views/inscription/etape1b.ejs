@@ -8,30 +8,26 @@
           <%= errorMessage %>
         </div>
     <% } %>
-    <form action="/inscription/etape1b" method="post">
+    <form action="/inscription/etape1b?id=<%= id %>" method="post">
             <div class="col-sm-6 form-group">
                 <label class="control-label">Ligne d'Adresse 1</label>
-                <input id="address_line1" name="address_line1" type="text" class="form-control" required autofocus>
+                <input name="address_line1" type="text" class="form-control" required autofocus>
             </div>
             <div class="col-sm-6 form-group">
                 <label class="control-label">Ligne d'Adresse 2</label>
-                <input id="address_line2" name="address_line2" type="text" class="form-control">
+                <input name="address_line2" type="text" class="form-control">
             </div>
             <div class="col-sm-6 form-group">
                 <label class="control-label">Ville</label>
-                <input id="city" name="city" type="text" class="form-control" required>
-            </div>
-            <div class="col-sm-6 form-group">
-                <label class="control-label">Région</label>
-                <input id="region" name="region" type="text" class="form-control" required>
+                <input name="city" type="text" class="form-control" required>
             </div>
             <div class="col-sm-6 form-group">
                 <label class="control-label">Code Postal</label>
-                <input id="postal_code" name="postal_code" type="text" class="form-control" required>
+                <input name="postal_code" type="text" class="form-control" required>
             </div>
             <div class="col-sm-6 form-group">
                 <label class="control-label">Pays</label>
-                <select id="country" name="country" class="form-control" required>
+                <select name="country" class="form-control" required>
                     <option value="" selected="selected">(Choisissez un pays)</option>
                     <option value="AF">Afghanistan</option>
                     <option value="AL">Albania</option>
@@ -278,11 +274,11 @@
             <p>Si tu t'inscrits comme une entreprise :</p>
             <div class="col-sm-6 form-group">
                 <label class="control-label">Nom de l'entreprise</label>
-                <input id="company_name" name="company_name" type="text" class="form-control">
+                <input name="company_name" type="text" class="form-control">
             </div>
             <div class="col-sm-6 form-group">
                 <label class="control-label">Numéro de TVA</label>
-                <input id="vat_number" name="vat_number" type="text" class="form-control">
+                <input name="vat_number" type="text" class="form-control">
             </div>
             <hr>
             <button type="submit" class="btn btn-lg btn-secondary">Aller vers l'étape 2</button>

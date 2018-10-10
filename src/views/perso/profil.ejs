@@ -19,17 +19,11 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <form action="/perso/profil?id=<%= user.shortId %>" method="post">
+                <form action="/perso/profil?id=<%= user.passportId %>" method="post">
                   <div class="form-group row">
                     <label for="shortId" class="col-4 col-form-label">Num&eacute;ro de passport</label>
                     <div class="col-8">
-                      <input value="<%= user.shortId %>" class="form-control here" type="text" disabled>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="username" class="col-4 col-form-label">Nom d'utilisateur</label>
-                    <div class="col-8">
-                      <input value="<%= user.username %>" class="form-control here" type="text" disabled>
+                      <input value="<%= user.passportId %>" class="form-control here" type="text" disabled>
                     </div>
                   </div>
                   <div class="form-group row">

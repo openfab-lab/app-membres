@@ -10,7 +10,7 @@ module.exports.read = async (params, meta) => {
   if (params.id) {
     const member = await models.users.find({
       where: {
-        shortId: params.id
+        passportId: params.id
       },
       attributes: { exclude: ['password'] },
       raw: true
