@@ -20,6 +20,7 @@ module.exports = {
     apiKey: process.env.EMAIL_API_KEY,
     domain: process.env.EMAIL_DOMAIN,
     from: process.env.EMAIL_FROM,
-    to: process.env.EMAIL_TO
+    to: process.env.EMAIL_TO,
+    host: process.env.EMAIL_HOST || 'api.mailgun.net'
   }
 };

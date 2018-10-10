@@ -101,6 +101,9 @@
                 <li class="nav-item <% if(page === 'membres') {%>active<% } %>">
                     <a class="nav-link" href="/membres" target="_self">Membres</a>
                 </li>
+                <li class="nav-item <% if(page === 'contact') {%>active<% } %>">
+                    <a class="nav-link" href="/contact" target="_self">Contactez-nous</a>
+                </li>
             </ul>
             <% if (user) { %>
             <% if (user.permissionsLevel === 3) { %>

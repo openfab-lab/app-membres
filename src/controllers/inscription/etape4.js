@@ -1,11 +1,8 @@
 const config = require('config');
-const mailgun = require('mailgun-js')({
-  apiKey: config.email.apiKey,
-  domain: config.email.domain
-});
 
 const views = require('../../views');
 const models = require('../../models');
+const mailgun = require('../../resources/mailgun');
 
 const view = './src/views/inscription/etape4.ejs';
 
@@ -31,24 +28,19 @@ module.exports.create = async (params, meta, req, res) => {
       raw: true
     }
   ).then(result => {
-    const data = {
+    const message = {
       from: config.email.from,
       to: result[1][0].email,
       subject: 'Hello',
       text: 'Bienvenue chez nous!'
     };
 
-    return new Promise((resolve, reject) => {
-      mailgun.messages().send(data, (error, body) => {
-        if (error) {
-          reject(error);
-        }
-
-        resolve({
+    return mailgun.sendMessage(message)
+      .then(result => {
+        return {
           redirect: '/inscription/confirmation?id=' + params.id
-        });
+        };
       });
-    });
   }).catch(error => {
     return views.render(view, {
       id: params.id,
