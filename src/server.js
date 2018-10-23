@@ -5,11 +5,14 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const ManagedError = require('saga-managed-error');
 const favicon = require('serve-favicon');
+const sassMiddleware = require('node-sass-middleware');
 
 const autoroute = require('./libs/autoroute');
 const applyAuthentication = require('./authentication');
 
-const log = require('saga-logger').create({ module: module.id });
+const log = require('saga-logger').create({
+  module: module.id
+});
 
 module.exports = () => {
   log.debug('ROUTER_LOADING');
@@ -17,14 +20,12 @@ module.exports = () => {
 
   const router = autoroute(
     express.Router,
-    path.join(__dirname, './controllers'),
-    {
+    path.join(__dirname, './controllers'), {
       read: 'get',
       create: 'post',
       update: 'patch',
       destroy: 'delete'
-    },
-    [
+    }, [
       'user'
     ]
   );
@@ -33,6 +34,15 @@ module.exports = () => {
   app.set('query parser', query => qs.parse(query, {
     arrayLimit: 9999,
     allowDots: true
+  }));
+
+  // Sass compilation
+  app.use(sassMiddleware({
+    src: path.join(__dirname, 'scss'),
+    dest: path.join(__dirname, 'static/css'),
+    debug: true,
+    outputStyle: 'compressed',
+    prefix: '/css'
   }));
 
   app.use(bodyParser.urlencoded({
@@ -61,7 +71,9 @@ module.exports = () => {
   // Error Handler (the 4 arguments are required!)
   app.use((error, req, res, next) => { // NOSONAR
     const statusCode = error.statusCode || 500;
-    const data = { error: error.message };
+    const data = {
+      error: error.message
+    };
 
     if (error.validations) {
       data.validations = error.validations;
