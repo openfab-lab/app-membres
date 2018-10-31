@@ -8,3 +8,5 @@ coverage
 config/*
 !config/default.js
 !config/test.js
+
+static/css
