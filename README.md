@@ -37,3 +37,5 @@ TODO:
 - Import old users
 - Coupons to master subscriptions
 - Logger
+- Credit card paiement (failover bancontact ?)
+- Auto-Invoices in zoho invoices
