@@ -1,0 +1,46 @@
+.profile-page {
+  .profile {
+    text-align: center;
+
+    img {
+      max-width: 160px;
+      width: 100%;
+      margin: 0 auto;
+      -webkit-transform: translate3d(0,-50%,0);
+      -moz-transform: translate3d(0,-50%,0);
+      -o-transform: translate3d(0,-50%,0);
+      -ms-transform: translate3d(0,-50%,0);
+      transform: translate3d(0,-50%,0);
+    }
+
+    .name {
+      margin-top: -80px;
+    }
+  }
+
+  .page-header {
+    height: 380px;
+    background-position: center;
+  }
+
+  .description {
+    margin: 1.071rem auto 0;
+    max-width: 600px;
+    color: #999;
+    font-weight: 300;
+  }
+
+  .profile-tabs {
+    margin-top: 4.284rem;
+  }
+
+  .gallery {
+    margin-top: 3.213rem;
+    padding-bottom: 50px;
+
+    img {
+      width: 100%;
+      margin-bottom: 2.142rem;
+    }
+  }
+}
