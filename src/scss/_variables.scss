@@ -1,0 +1,51 @@
+/*
+ * Structure based on things found at @url:https://github.com/thomaspark/bootswatch
+ */
+
+// @TODO: host it locally
+$web-font-path: "https://fonts.googleapis.com/css?family=Roboto:100,400,700,400italic" !default;
+@import url($web-font-path);
+
+$white: #fff;
+$black: #000;
+
+// Colors provided by @anca on slack 21/10/18
+$red: #d40000;
+$orange: #ff9200;
+$yellow: #ffd821;
+$green: #008000;
+$blue: #67cfff;
+$deepblue: #0015ff;
+$purple: #800080;
+
+$darkgrey: #222;
+$lightgrey: #ddd;
+
+$primary:       $blue !default;
+$secondary:     $black !default;
+$success:       $green !default;
+$info:          $blue !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $lightgrey !default;
+$dark:          $darkgrey !default;
+
+// Body
+
+$body-bg:                   $white !default;
+$body-color:                $darkgrey !default;
+
+// Links
+
+$link-color: $deepblue !default;
+
+
+// Fonts
+
+$font-family-sans-serif:      "Roboto", Arial, sans-serif !default;
+
+$font-size-base:              1rem !default;
+
+$h1-font-size:                3rem !default;
+$h2-font-size:                2.5rem !default;
+$h3-font-size:                2rem !default;
