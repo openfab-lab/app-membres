@@ -1,3 +1,48 @@
 .card-bottom {
   margin-bottom: 15px;
 }
+
+.user-icon {
+    height: 3em;
+    width: 3em;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+%cardHover {
+  background-color: $lightgrey;
+  cursor: pointer;
+}
+
+.user-list-item:checked + .card {
+  background-color: lighten($lightgrey, 5);
+
+  &:hover {
+    @extend %cardHover;
+  }
+}
+
+.card:hover {
+  @extend %cardHover;
+}
+
+.select-user-option {
+  label {
+    width: 100%;
+  }
+
+  .card-body {
+    padding: 0.25em;
+  }
+
+  .user-icon {
+    display: inline-block;
+    height: 2em;
+    margin-left: .5em;
+    margin-right: .75em;
+    width: 2em;
+    vertical-align: middle;
+  }
+}
