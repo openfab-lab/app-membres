@@ -21,9 +21,8 @@ const setClassMethods = Projects => {
 module.exports = (sequelize, DataTypes) => { // NOSONAR
   const Projects = sequelize.define('projects', {
 
-    shortid: {
+    shortId: {
       type: DataTypes.TEXT,
-      allowNull: false,
       unique: 'projects_short_id'
     },
 
@@ -32,14 +31,44 @@ module.exports = (sequelize, DataTypes) => { // NOSONAR
       allowNull: false
     },
 
+    // Project URL key
+    slug: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+
+    imageLink: {
+      type: DataTypes.STRING,
+      field: 'image_link'
+    },
+
     description: {
       type: DataTypes.TEXT,
       allowNull: false
     },
 
+    // Store Quill Delta object
+    longDescription: {
+      type: DataTypes.TEXT,
+      field: 'long_description'
+    },
+
+    // Hold id[] of machines used in project.
+    // WARN: Not Database-agnostic
+    machines: {
+      type: DataTypes.ARRAY(DataTypes.SMALLINT)
+    },
+
     link: {
       type: DataTypes.TEXT,
       allowNull: false
+    },
+
+    // Wether or not the project can be visible publicly
+    privacyLevel: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      field: 'privacy_level'
     },
 
     createdAt: {
@@ -64,10 +93,27 @@ module.exports = (sequelize, DataTypes) => { // NOSONAR
         result.shortId = shortid.generate();
       }
     },
-    indexes: []
+    indexes: [{
+      unique: true,
+      fields: ['slug']
+    }]
   });
 
   setClassMethods(Projects);
+
+  Projects.privacyLevels = {
+    PRIVATE: 'private',
+    MEMBERS: 'members',
+    PUBLIC: 'public'
+  };
+
+  Projects.associate = models => {
+    Projects.belongsToMany(models.users, {
+      through: 'user_projects',
+      as: 'users',
+      foreignKey: 'projectId'
+    });
+  };
 
   return Projects;
 };

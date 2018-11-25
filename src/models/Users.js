@@ -158,7 +158,11 @@ module.exports = (sequelize, DataTypes) => { // NOSONAR
   setClassMethods(Users);
 
   Users.associate = models => {
-    Users.hasMany(models.projects);
+    Users.belongsToMany(models.projects, {
+      through: 'user_projects',
+      as: 'projects',
+      foreignKey: 'userId'
+    });
     Users.hasMany(models.bills);
     Users.hasMany(models.subscribtions);
     Users.hasMany(models.billingdetails);
