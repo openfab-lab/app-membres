@@ -1,0 +1,23 @@
+<%- include('../layout/top', {page: 'projets'}); %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 mt-4">
+      <h1>Projets
+        <% if (user) { %>
+        <small>| <a href="/perso/projets">Mes projets</a></small>
+        <% } %>
+      </h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <p>Retrouvez ici quelques projets réalisés par les Fabiens</p>
+    </div>
+    <div class="col-sm-12">
+      <%- include("../_partials/projectList.ejs", {projects, user}) %>
+    </div>
+  </div>
+</div>
+<%- include('../layout/bottom'); %>
