@@ -12,17 +12,24 @@ module.exports.read = async (params, meta) => {
       where: {
         passportId: params.id
       },
-      attributes: { exclude: ['password'] },
-      raw: true
+      attributes: { exclude: ['password'] }
     });
 
-    member.hashedEmail = hashEmail.hashMd5(member.email);
+    if (!member) {
+      return 404;
+    }
 
-    const projects = await models.projects.findAll({
+    member.hashedEmail = hashEmail.hashMd5(member.email);
+    const privacyLevel = meta.user ? [models.projects.privacyLevels.MEMBERS, models.projects.privacyLevels.PUBLIC] : models.projects.privacyLevels.PUBLIC;
+
+    const projects = await member.getProjects({
       where: {
-        userId: member.id
+        privacyLevel: privacyLevel
       },
-      raw: true
+      include: [{
+        model: models.users,
+        as: 'users'
+      }]
     });
 
     return views.render('./src/views/membre.ejs', {
