@@ -1,0 +1,13 @@
+<% if(typeof link === "undefined" || link === true){ %>
+<a href="/membres/<%= user.passportId %>">
+  <% } %>
+
+  <div class="user-icon" style="background-image: url(https://www.gravatar.com/avatar/<%= user.hashedEmail %>?size=50)" <% if(typeof tooltip==="undefined" || tooltip===true){ %>data-toggle="tooltip"
+    <% } %>
+    data-placement="right" title="
+    <%= `${user.firstName} ${user.lastName}` %>">
+  </div>
+
+  <% if(typeof link === "undefined" || link === true){ %>
+</a>
+<% } %>

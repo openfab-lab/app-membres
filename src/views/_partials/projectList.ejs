@@ -1,0 +1,42 @@
+<% let isEditable = false; %>
+
+<div class="row">
+
+  <% if(!projects || !projects.length) { %>
+  <p>Il n&quot;y a aucun projet à afficher...</p>
+  <% } else { %>
+
+  <% for (p of projects) { %>
+  <% isEditable = false; %>
+
+  <div class=" col-xs-6 col-sm-4 col-lg-3">
+    <div class="card project">
+
+      <a href="./projets/<%= p.slug %>">
+        <div class="project-image" style="background-image: url(<%= p.imageLink %>)"></div>
+      </a>
+
+      <div class="card-body">
+        <a href="./projets/<%= p.slug %>">
+          <h5 class="card-title">
+            <%= p.title %>
+          </h5>
+        </a>
+        <p class="card-text">
+          <%= p.description %>
+        </p>
+      </div>
+
+      <div class="card-footer">
+        <% p.users.forEach(u => { %>
+        <%- include("./userIcon.ejs", { user:u }) %>
+        <% if (u.id === user.id) { isEditable = true;} %>
+        <% }); %>
+        <% if (isEditable) { %>
+        <div><a href="/perso/projets/edit/<%= p.slug %>" class="btn-default btn btn pull-right"><i class="fa fa-edit mr-2"></i> Éditer</a></div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+  <% }} %>
+</div>
