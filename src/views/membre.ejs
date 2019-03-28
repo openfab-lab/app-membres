@@ -27,17 +27,7 @@
             </div>
             <div>
                 <h2>Projets :</h2>
-
-                <div class="list-group">
-                  <% projects.forEach(function (project) { %>
-                  <a href="<%- project.link %>" class="list-group-item list-group-item-action flex-column align-items-start" target="_self">
-                    <div class="d-flex w-100 justify-content-between">
-                      <h5 class="mb-1"><%- project.title %></h5>
-                    </div>
-                    <p class="mb-1"><%- project.description %></p>
-                  </a>
-                  <% }) %>
-                </div>
+                <%- include("./_partials/projectList.ejs", {projects, undefined}) %>
             </div>
         </div>
     </div>

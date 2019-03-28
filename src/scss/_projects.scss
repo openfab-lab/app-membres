@@ -1,0 +1,22 @@
+.project-list {
+
+}
+
+.project {
+
+  .card-footer {
+    padding: .5em;
+
+    a {
+      display: inline-block;
+    }
+  }
+}
+
+.project-image {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  height: 12em;
+}

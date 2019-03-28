@@ -1,0 +1,33 @@
+<%- include('../layout/top', {page: 'projets'}); %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-7">
+      <h1 class="display-3">
+        <%= project.title %>
+      </h1>
+
+      <% if (project.link) { %>
+      <a href="<%= project.link %>" title="lien vers la page GiHub">Voir le projet sur Github</a>
+      <% } %>
+
+      <p>
+        <%= project.description %>
+      </p>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <%- projectLongDescriptionHtml %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-7">
+
+    </div>
+    <div class="col-xs-12 col-sm-5">
+    </div>
+  </div>
+</div>

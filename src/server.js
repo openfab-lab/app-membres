@@ -3,6 +3,7 @@ const qs = require('qs');
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const expressSanitizer = require('express-sanitizer');
 const ManagedError = require('saga-managed-error');
 const favicon = require('serve-favicon');
 const sassMiddleware = require('node-sass-middleware');
@@ -56,6 +57,8 @@ module.exports = () => {
       limit: '200mb'
     })
   );
+
+  app.use(expressSanitizer());
 
   app.use(favicon('./src/static/images/favicon.ico'));
   app.use(express.static('./src/static/'));

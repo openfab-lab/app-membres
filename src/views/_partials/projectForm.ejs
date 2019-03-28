@@ -1,0 +1,145 @@
+<form action="<% if(typeof formAction !== 'undefined' ) { %>
+  <%= formAction %>
+  <% }%>" method="post" id="js-project-form">
+
+
+  <% if(returningNewProject.id) { %>
+  <input type="hidden" value="<%= returningNewProject.id %>" name="projectId" /></input>
+  <% } %>
+
+
+  <div class="col-sm-12">
+    <div class="row my-2">
+
+      <div class="col-xs-12 col-sm-4 form-group">
+        <label class="<% if(typeof showLabel === 'undefined') { %>sr-only
+          <% } %>">Titre</label>
+        <input type="text" class="form-control" name="title" value="<%= returningNewProject.title %>" required autofocus placeholder="Nom du projet">
+      </div>
+
+      <div class="col-xs-12 col-sm-4 form-group">
+        <label class="<% if(typeof showLabel === 'undefined') { %>sr-only
+          <% } %>">Slug</label>
+        <input type="text" pattern="^[a-z0-9]+(?:-[a-z0-9]+)*$" class="form-control" name="slug" value="<%= returningNewProject.slug %>" required autofocus placeholder="Nom d'URL" maxlength="100">
+      </div>
+
+      <div class="col-xs-12 col-sm-4 form-group">
+        <label class="<% if(typeof showLabel === 'undefined') { %>sr-only
+          <% } %>">Confidentialité</label>
+        <select class="form-control" name="privacy_level">
+          <% for (key of Object.keys(privacyLevels)) { %>
+          <option value=<%=privacyLevels[key] %>
+            <% if (returningNewProject.privacyLevel === privacyLevels[key]) { %>selected
+            <%}%>>
+            <%= key.toLocaleLowerCase() %>
+          </option>
+          <% } %>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 form-group">
+        <label class="<% if(typeof showLabel === 'undefined') { %>sr-only
+        <% } %>">Description</label>
+        <%# MaxLenght due to use in meta description %>
+        <input type="text" class="form-control" name="description" value="<%= returningNewProject.description %>" required placeholder="Description courte du projet" maxlength="250">
+      </div>
+    </div>
+
+    <hr>
+
+
+    <div class="row my-2">
+      <div class="col-xs-12 col-sm-12 form-group h-100">
+        <label class="<% if(typeof showLabel === 'undefined') { %>sr-only
+        <% } %>">Description détaillée</label>
+        <div id="editor">
+          <p>Hello World!</p>
+          <p>Some initial <strong>bold</strong> text</p>
+          <p><br></p>
+        </div>
+        <input type="hidden" name="long_description"></textarea>
+      </div>
+    </div>
+
+    <div class="row my-2">
+      <div class="col-xs-12 col-sm-6">
+        <div class="form-group">
+          <label class="<% if(typeof showLabel === 'undefined') { %>sr-only
+            <% } %>">Image link</label>
+          <input type="text" class="form-control" name="imageLink" required value="<%= returningNewProject.imageLink %>" placeholder="Image link">
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6">
+        <div class="form-group">
+          <label class="<% if(typeof showLabel === 'undefined') { %>sr-only
+            <% } %>">(Github) link</label>
+          <input type="text" class="form-control" name="link" required value="<%= returningNewProject.link %>" placeholder="(Github) link">
+        </div>
+      </div>
+    </div>
+
+    <div class="row my-2">
+
+      <div class="col-sm-6 col-xs-12">
+        <h3>Membres</h3>
+        <ul class="list-unstyled">
+          <% for (u of users) { %>
+          <li class="select-user-option">
+            <label>
+              <input type="checkbox" name="users" multiple style="display: none" value="<%= u.id %>" class="user-list-item" <% if(returningNewProject.users.map(u=> u.id).includes(u.id)) { %>checked
+              <% } %>
+              />
+              <div class="card">
+                <div class="card-body">
+                  <%- include("./userIcon.ejs", { user:u, link: false, tooltip: false }) %>
+                  <%= `${u.lastName} ${u.firstName}` %>
+                </div>
+              </div>
+            </label>
+          </li>
+          <% } %>
+        </ul>
+      </div>
+
+
+      <div class="col-sm-6 col-xs-12">
+        <h3>Machines</h3>
+      </div>
+    </div>
+
+    <div class="row m-3">
+      <div class="col-xs-12 col-sm-12">
+        <div class="pull-right">
+          <button type="submit" class="btn btn-lg btn-secondary">Sauver</button>
+          <button type="button" class="btn btn-lg btn-danger" data-toggle="modal" data-target="#deletion-modal">
+            Supprimer
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Deletion modal -->
+    <div class="modal fade" id="deletion-modal" tabindex="-1" role="dialog" aria-labelledby="deletion-modal-title" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deletion-modal-title">Supprimer le projet</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Pas de regrets ?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+            <button type="button" class="btn btn-danger" id="js-delete-project">Supprimer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
