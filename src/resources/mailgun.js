@@ -2,7 +2,8 @@ const config = require('config');
 const mailgun = require('mailgun-js')({
   apiKey: config.email.apiKey,
   domain: config.email.domain,
-  host: config.email.host
+  host: config.email.host,
+  host: 'api.eu.mailgun.net'
 });
 
 module.exports.sendMessage = (message) => {

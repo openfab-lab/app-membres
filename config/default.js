@@ -9,6 +9,7 @@ module.exports = {
     host: process.env.PG_HOST,
     user: process.env.PG_USER,
     password: process.env.PG_PASSWORD,
+    port: parseInt(process.env.PG_PORT),
     db: process.env.PG_DB
   },
   security: {

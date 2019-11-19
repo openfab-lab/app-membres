@@ -1,6 +1,7 @@
 <%- include('./layout/top', {page: 'contact'}); %>
 <div class="container">
     <h1 class="display-3">Contact</h1>
+    <% if(!successMessage) { %>
     <div class="col-md-8">
       <p>Utilisez le formulaire suivant pour nous contacter et nous parler de votre projet, on l'aime déjà !</p>
     </div>
@@ -23,5 +24,11 @@
             </div>
         </form>
     </div>
+    <% } else {  %>
+    <div class="col-md-8">
+      <p>Nous avons bien reçu ton message, on te tient au courant :)</p>
+    </div>
+    <% } %>
+
 </div>
 <%- include('./layout/bottom'); %>

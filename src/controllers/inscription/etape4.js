@@ -4,6 +4,8 @@ const views = require('../../views');
 const models = require('../../models');
 const mailgun = require('../../resources/mailgun');
 
+const log = require('saga-logger').create({ module: module.id });
+
 const view = './src/views/inscription/etape4.ejs';
 
 module.exports.read = async (params, meta) => {
@@ -42,6 +44,7 @@ module.exports.create = async (params, meta, req, res) => {
         };
       });
   }).catch(error => {
+    log.error('ETAPE4_ERROR', error);
     return views.render(view, {
       id: params.id,
       user: meta.user,

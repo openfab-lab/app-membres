@@ -4,7 +4,7 @@
     <div class="card-columns">
       <% membres.forEach(function (membre) { %>
         <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="https://www.gravatar.com/avatar/<%= membre.hashedEmail %>?s=572" alt="<%= membre.lastName %> <%= membre.firstName %>">
+          <img class="card-img-top" src="https://www.gravatar.com/avatar/<%= membre.hashedEmail %>?s=572" alt="<%= membre.firstName %> <%= membre.lastName %>">
           <div class="card-body">
             <h5 class="card-title"><%= membre.lastName %> <%= membre.firstName %></h5>
             <p class="card-text"><%= membre.bio %></p>

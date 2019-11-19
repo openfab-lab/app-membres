@@ -13,6 +13,7 @@ module.exports = new Sequelize(
   {
     dialect: 'postgres',
     host: config.pg.host,
+    port: config.pg.port,
     logging
   }
 );

@@ -6,13 +6,15 @@ node:
     APP_ENDPOINT: https://membres.openfab.be
     EMAIL_API_KEY: ${EMAIL_API_KEY}
     EMAIL_DOMAIN: ${EMAIL_DOMAIN}
-    EMAIL_FROM: 'Openfab <postmaster@sandbox381251d0eb4544a883475a5bff3928fe.mailgun.org>'
+    EMAIL_FROM: 'Openfab <no-reply@mg.openfab.be>'
     EMAIL_TO: 'louis@openfab.be'
     LOG_LEVEL: debug
     NODE_ENV: development
-    PG_HOST: postgresql
-    PG_USER: postgres
-    PG_DB: postgres
+    PG_HOST: ${PG_HOST}
+    PG_PORT: ${PG_PORT}
+    PG_USER: ${PG_USER}
+    PG_DB: ${PG_DB}
+    PG_PASSWORD: ${PG_PASSWORD}
     SECURITY_HASH_SALT: openfabiswatchingus
     SECURITY_SECRET: openfabiswatchingus
     VATLAYER_KEY: ${VATLAYER_KEY}
