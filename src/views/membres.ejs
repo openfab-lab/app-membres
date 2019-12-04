@@ -7,7 +7,11 @@
           <img class="card-img-top" src="https://www.gravatar.com/avatar/<%= membre.hashedEmail %>?s=572" alt="<%= membre.firstName %> <%= membre.lastName %>">
           <div class="card-body">
             <h5 class="card-title"><%= membre.lastName %> <%= membre.firstName %></h5>
+            <% if (membre.bio) { %>
             <p class="card-text"><%= membre.bio %></p>
+            <% } else { %>
+            <p class="card-text">&nbsp;</p>
+            <% } %>
             <a href="/membres/<%= membre.passportId %>" class="btn btn-secondary">Voir le profile</a>
           </div>
         </div>
