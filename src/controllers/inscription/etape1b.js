@@ -15,13 +15,13 @@ module.exports.read = async (params, meta) => {
 };
 
 module.exports.create = async (params, meta, req, res) => {
-  let validVAT = true;
-
-  if (params.vat_number.length > 0) {
-    validVAT = await vatlayer.validateVAT(params.vat_number);
-  }
-
-  if (validVAT) {
+// VAT validation feture is disabled
+// @see https://github.com/openfab-lab/app-membres/issues/12
+//  let validVAT = true;
+//  if (params.vat_number.length > 0) {
+//    validVAT = await vatlayer.validateVAT(params.vat_number);
+//  }
+//  if (validVAT) {
     const user = await models.users.find({
       where: {
         shortId: params.id
@@ -52,12 +52,13 @@ module.exports.create = async (params, meta, req, res) => {
         errorMessage: error
       });
     });
-  } else {
-    return views.render(view, {
-      id: params.id,
-      user: meta.user,
-      returningBillingAddress: params,
-      errorMessage: 'Le numéro de TVA est invalide'
-    });
-  }
+
+  // } else {
+  //   return views.render(view, {
+  //     id: params.id,
+  //     user: meta.user,
+  //     returningBillingAddress: params,
+  //     errorMessage: 'Le numéro de TVA est invalide'
+  //   });
+  // }
 };
