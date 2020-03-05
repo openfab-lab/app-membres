@@ -7,13 +7,17 @@ const mailgun = require('mailgun-js')({
 });
 
 module.exports.sendMessage = (message) => {
-  return new Promise((resolve, reject) => {
-    mailgun.messages().send(message, (error, body) => {
-      if (error) {
-        reject(error);
-      }
+  if(process.env.IS_EMAIL_ACTIVATED === 'true') {
+    return new Promise((resolve, reject) => {
+      mailgun.messages().send(message, (error, body) => {
+        if (error) {
+          reject(error);
+        }
 
-      resolve(body);
+        resolve(body);
+      });
     });
-  });
+  }
+
+  console.log('Email deactivated, skip sending of : ',message )
 };

@@ -4,6 +4,7 @@ node:
   environment:
     APP_PORT: 17461
     APP_ENDPOINT: https://membres.openfab.be
+    IS_EMAIL_ACTIVATED: 'false'
     EMAIL_API_KEY: ${EMAIL_API_KEY}
     EMAIL_DOMAIN: ${EMAIL_DOMAIN}
     EMAIL_FROM: 'Openfab <no-reply@mg.openfab.be>'
