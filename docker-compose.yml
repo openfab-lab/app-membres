@@ -24,6 +24,8 @@ node:
     - ./config:/var/www/config
     - ./src:/var/www/src
     - ./package.json:/var/www/package.json
+    - ./.sequelizerc:/var/www/.sequelizerc
+    - ./db:/var/www/db
   links:
     - postgresql
 

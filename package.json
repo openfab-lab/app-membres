@@ -59,6 +59,7 @@
     "saga-logger": "0.0.8",
     "saga-managed-error": "1.0.0",
     "sequelize": "4.32.2",
+    "sequelize-cli": "5.5.1",
     "serve-favicon": "2.4.5",
     "shortid": "2.2.13",
     "svg-captcha": "^1.4.0"
