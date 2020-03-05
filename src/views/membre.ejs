@@ -14,9 +14,14 @@
                         </div>
                         <br />
                         <div class="name">
-                            <h3 class="title"><%- member.firstName %> <%- member.lastName %></h3>
+                            <h3 class="title">
+                                <%- member.firstName %> <%- member.lastName %>
+                                    <% if(user.shortId === member.shortId) { %>
+                                        <a class="btn btn-primary btn-sm align-top" href="/perso/profil"  style="line-height: normal;"><i class="fa fa-edit"></i> Éditer</a>
+                                    <% }%>
+                            </h3>
                             <% if(member.github) { %>
-                                <a href="https://github.com/<%- member.github %>" target="_blank" class="btn btn-just-icon btn-link btn-dribbble"><i class="fa fa-github"></i></a>
+                                <a href="https://github.com/<%- member.github %>" target="_blank" class="btn btn-link btn-dribbble"><i class="fa fa-github fa-lg"></i> @<%- member.github %></a>
                             <% } %>
                         </div>
                     </div>
