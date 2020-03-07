@@ -1,6 +1,6 @@
 node:
   build: .
-  command: npm run watch
+  command: /wait && npm run watch
   environment:
     APP_PORT: 17461
     APP_ENDPOINT: https://membres.openfab.be
@@ -19,6 +19,8 @@ node:
     SECURITY_HASH_SALT: openfabiswatchingus
     SECURITY_SECRET: openfabiswatchingus
     VATLAYER_KEY: ${VATLAYER_KEY}
+    # Wait for these hosts to be up before starting cmd
+    WAIT_HOSTS: postgresql:5432
   ports:
     - "19461:17461"
   volumes:
