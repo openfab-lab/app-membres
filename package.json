@@ -8,7 +8,9 @@
   },
   "scripts": {
     "start": "node src/index.js",
+    "wait-start": "/wait && npm run start",
     "watch": "nodemon --exec npm run start",
+    "wait-watch": "/wait && npm run watch",
     "test": "NODE_ENV=test LOG_LEVEL=fatal node_modules/.bin/istanbul cover node_modules/.bin/_mocha test/index.js;",
     "lint": "semistandard --verbose 'src/**/*.js' 'test/**/*.js'",
     "pretest": "npm run lint"

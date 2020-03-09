@@ -1,6 +1,6 @@
 node:
   build: .
-  command: /wait && npm run watch
+  command: 'npm run wait-watch'
   environment:
     APP_PORT: 17461
     APP_ENDPOINT: https://membres.openfab.be
