@@ -14,4 +14,4 @@ COPY ./package.json /var/www/package.json
 
 RUN npm install
 
-CMD /wait && npm start
+CMD npm run wait-start
