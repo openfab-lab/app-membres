@@ -10,6 +10,8 @@ const sassMiddleware = require('node-sass-middleware');
 const autoroute = require('./libs/autoroute');
 const applyAuthentication = require('./authentication');
 
+const mdDisplay = require('./controllers/md')
+
 const log = require('saga-logger').create({
   module: module.id
 });
@@ -63,6 +65,7 @@ module.exports = () => {
   applyAuthentication(app);
 
   app.use('/', router);
+  app.get('/md/*', mdDisplay);
 
   app.all('*', (req, res, next) => {
     next(new ManagedError('API_GENERAL', 404));

@@ -12,6 +12,7 @@ const publicRoutes = {
   '/contact': ['GET', 'POST'],
   '/membres': ['GET'],
   '/healthcheck': ['GET'],
+  '/md': ['GET'],
   '/inscription': ['GET', 'POST']
 };
 
