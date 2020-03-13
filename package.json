@@ -51,6 +51,7 @@
     "express": "4.16.2",
     "lodash": "4.17.15",
     "mailgun-js": "0.21.0",
+    "md-mirror": "^1.0.0",
     "node-sass-middleware": "0.11.0",
     "passport": "0.4.0",
     "pg": "7.4.1",
