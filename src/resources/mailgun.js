@@ -20,4 +20,5 @@ module.exports.sendMessage = (message) => {
   }
 
   console.log('Email deactivated, skip sending of : ',message )
+  return Promise.resolve()
 };
