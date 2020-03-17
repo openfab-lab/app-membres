@@ -25,8 +25,8 @@
             <hr>
 
         <div class="form-group">
-            <label>Numéro de téléphone</label>
-            <input type="tel" pattern='^\+?\d{0,13}' class="form-control" name="phone_number" value="<%= returningSubscription.phone_number %>" required>
+            <label>Numéro de téléphone (+32 555 ** ** **)</label>
+            <input type="tel" pattern='[\+]\d{2}[\ ]\d{3}[\ ]\d{2}[\ ]\d{2}[\ ]\d{2}' class="form-control" name="phone_number" value="<%= returningSubscription.phone_number %>" required>
         </div>
         <hr>
         <div class="form-group">
