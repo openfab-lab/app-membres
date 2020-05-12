@@ -56,7 +56,7 @@
                   <div class="form-group row">
                     <label for="github" class="col-4 col-form-label">Nom d'utilisateur Github</label>
                     <div class="col-8">
-                      <input id="github" name="github" value="<%= user.github %>" class="form-control here" required="required" type="text">
+                      <input id="github" name="github" value="<%= user.github %>" class="form-control here" type="text">
                     </div>
                   </div>
                   <div class="form-group row">
@@ -64,6 +64,14 @@
                     <div class="col-8">
                       <textarea id="bio" name="bio" cols="40" rows="4" class="form-control"><%= user.bio %></textarea>
                     </div>
+                  </div>
+                  <hr/>
+                  <b>Vie privée</b>
+                  <div class="form-group">
+                      <div class="custom-control custom-switch">
+                          <input type="checkbox" class="custom-control-input" name="imageRightsConsent" id="imageRightsConsent" <% if(user.imageRightsConsent) { %>checked<% } %>>
+                          <label class="custom-control-label" for="imageRightsConsent">J'autorise la diffusion sur openfab.be de photos/vidéos sur lesquelles j'apparais</label>
+                      </div>
                   </div>
                   <div class="form-group row">
                     <div class="offset-4 col-8">

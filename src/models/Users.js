@@ -95,6 +95,12 @@ module.exports = (sequelize, DataTypes) => { // NOSONAR
       field: 'house_rules'
     },
 
+    // User grant rights to display their profile pic on the web
+    imageRightsConsent: {
+      type: DataTypes.BOOLEAN,
+      field: 'image_rights_consent'
+    },
+
     registerValidate: {
       type: DataTypes.BOOLEAN,
       field: 'register_validate'

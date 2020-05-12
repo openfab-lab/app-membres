@@ -41,7 +41,8 @@ module.exports.create = async (params, meta, req, res) => {
       email: params.email,
       phoneNumber: params.phoneNumber,
       github: params.github,
-      bio: params.bio
+      bio: params.bio,
+      imageRightsConsent: params.hasOwnProperty('imageRightsConsent') && params.imageRightsConsent === 'on'
     }, {
       where: {
         passportId: params.id
