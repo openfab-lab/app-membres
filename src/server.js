@@ -42,7 +42,7 @@ module.exports = () => {
   app.use(sassMiddleware({
     src: path.join(__dirname, 'scss'),
     dest: path.join(__dirname, 'static/css'),
-    debug: true,
+    debug: false,
     outputStyle: 'compressed',
     prefix: '/css'
   }));
