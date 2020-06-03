@@ -1,17 +1,51 @@
 <%- include('../layout/top', {page: 'inscription_debut'}); %>
-<div class="container">
+<div class="container mt-5">
     <h1 class="display-3">Inscription</h1>
     <div class="col-sm-12">
-      <p>Salut et déjà, bienvenue à l'Openfab !</p>
-      <p>Si tu es ici, c'est que tu veux t'inscrire chez nous, super ! Au fur et à mesure du processus, nous aurons besoin d'une série d'information :</p>
+    
+      
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-sm">
+            <p class="mx-auto mt-5 text-right"><img src="https://user-images.githubusercontent.com/12049360/81651147-c570c880-9432-11ea-9d5b-79d1c1390be8.png" alt=""></p>
+          </div>
+
+          <div class="col-sm text-center">
+            <p class="display-4 mx-auto mt-5 text-left">Salut et bienvenue chez Openfab !</p>
+          </div>
+          
+          <div class="mx-auto text-center">
+            <p class="lead">Si tu es ici, c'est que tu te sens un peu nul en bricolage mais tu veux t'améliorer, félicitation !<br>
+            Alors je parle beaucoup de bricoler mais on est d'accord que c'est pas de la grosse menuiserie.<br>
+            Openfab est un fablab, on y privilégie les skills associés aux machines numériques, impression 3D, électronique, découpe et gravure au laser.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-sm">
+            <p class="mx-auto mt-5 text-center"><img src="https://user-images.githubusercontent.com/12049360/81706190-28348500-9470-11ea-97c6-b8ccc89db8ce.png" alt=""><br><caption>"- Les ordis sont nos amis, ils nous aident à faire ce qu'on arrive pas avec nos petites mains d'humain kawai."</caption></p>
+          </div>
+
+          <div class="col-sm">
+            <p class="mx-auto mt-auto text-center"><img src="https://user-images.githubusercontent.com/12049360/81708436-8150e880-9471-11ea-9794-5b0c696ecd02.png" alt=""><br><caption>"- Moi, je t'avoue que même quand je suis à fond, répéter la même action tout le temps, ça me fatigue. Un script et une machine pourrait certainement faire le job à ma place..."</caption></p>
+          </div>
+        </div>
+      </div>
+      
+        
+      <p>Au fur et à mesure du processus, nous aurons besoin d'une série d'information :</p>
       <ul>
-          <li>Ton prénom, ton nom, ton adresse email</li>
-          <li>Tes données de facturation (+ numéro de TVA si l'inscription est pour une entreprise)</li>
+          <li>Tes données de facturation (contacte-nous si tu veux ajouter un n° TVA, c'est possible)</li>
+          <li>Avec ton prénom, ton nom, ton n° de téléphone et adresse email,</li>
           <!-- <li>Ton numéro de compte au format IBAN pour mettre en route la domiciliation (nous ne le concervons pas, il est directement utilisé par notre fournisseur de paiement : <a href="https://help.one.com/hc/fr/articles/115005585049-Questions-fr%C3%A9quemment-pos%C3%A9es-%C3%A0-propos-de-Stripe" target="_blank">Stripe</a>. Pas de danger de sécurité)</li> -->
       </ul>
-      <p>Si tu as toutes ces information qui sont prêtes, passons à l'étape suivante !</p>
-      <p>En t'inscrivant à notre assiocitation, tu nous donne le droit de conserver tes données et de les utiliser pour te contacter. Nous ne les transmetterons JAMAIS à des tiers, nous non plus on aime pas les spams.
+      
+      <p><small class="text-muted">En t'inscrivant à notre assiocitation, tu nous donne le droit de conserver tes données et de les utiliser pour te contacter. Nous ne les transmetterons JAMAIS à des tiers, nous non plus on aime pas les spams.</small></p>
     </div>
-    <a class="btn btn-secondary" href="/inscription/etape1" target="_self" role="button">Passer à l'étape suivante</a>
+    <a class="btn btn-secondary" href="/inscription/etape1" target="_self" role="button">Passer à l'étape suivante!</a>
 </div>
+<br />
+<br />
 <%- include('../layout/bottom'); %>
