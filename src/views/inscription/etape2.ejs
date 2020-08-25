@@ -1,32 +1,65 @@
 <%- include('../layout/top', {page: 'inscription_etape2'}); %>
-<div class="container">
+<div class="container mt-5">
     <h1 class="display-3">Inscription</h1>
-    <div class="col-md-4">
-      <h2>Etape 2</h2>
-    </div>
+    <h2>Etape 1/4</h2>
+    
     <% if (errorMessage) { %>
         <div class="alert alert-danger" role="alert">
           <%= errorMessage %>
         </div>
     <% } %>
+    <h3>Le check-in majeur*</h3> 
     <form action="/inscription/etape2?id=<%= id %>" method="post">
         <div class="col-sm-12">
             <div class="form-check">
               <input class="form-check-input" type="radio" name="majority" id="over_than_18" value="over_than_18" checked>
               <label class="form-check-label" for="over_than_18">
-                Oui, j'ai plus de 18 ans
+                I was doing the Vulcan salute before it was cool.
               </label>
             </div>
             <div class="form-check">
               <input class="form-check-input" type="radio" name="majority" id="under_than_18" value="under_than_18">
               <label class="form-check-label" for="under_than_18">
-                Non, j'ai moins de 18 ans mais j'ai l'autorisation de mes parents / tuteurs
+                Okay boomer...
               </label>
             </div>
         </div>
         <br />
-        <button type="submit" class="btn btn-lg btn-secondary">Aller vers l'étape 3</button>
+      </form>
+
+      <p><small>* Nous engageons la responsabilité de chacun, les mineurs doivent être repr&eacute;sent&eacute;s par leurs adultes respectifs.</small></p>
+      <div class="row">
+        <div class="col-sm">
+          <p class="mx-auto mt-2"><img src="https://www.kindpng.com/picc/m/102-1022311_transparent-rick-and-morty-clipart-rick-and-morty.png" height="300" alt=""></p>
         </div>
-    </form>
+        <div class="col-sm">
+          <p class="mx-auto mt-2"><img src="https://cdn130.picsart.com/308383020320211.png" height="300" alt=""></p>
+        </div>
+      </div>
+    <h3>Cotisation choisie</h3> 
+      <form action="/inscription/etape2?id=<%= id %>" method="post">
+          <div class="col-sm-12">
+              <div class="form-coti">
+                <input class="form-coti-input" type="radio" name="cotisation" id="25_an" value="25_an" checked>
+                <label class="form-coti-label" for="25_an">
+                Je supporte l'activit&eacute;, je viendrai peut-être à un &eacute;venement ou l'autre, je choisis la cotisation annuelle** de <strong>25€/an.</strong>
+                </label>
+              </div>
+              <div class="form-coti">
+                <input class="form-coti-input" type="radio" name="cotisation" id="20_month" value="20_month">
+                <label class="form-coti-label" for="20_month">
+                À l'occasion je viendra mettre un coup de polish, je choisis la cotisation mensuelle** de <strong>20€/mois.</strong>
+                </label>
+              </div>
+          </div>
+          <p><small>** par ordre permanent à l'ordre de l'asbl Syntonie.</small></p>
+        <img src="https://lh3.googleusercontent.com/proxy/IkZiFs83p6XGo85c91v9xJ1wrynW_OT-ZrOYzd-e_zxtWW84NPaHPqva0-0G4cX4abryIVIYJV2JMdAXuOa7bKANA2quS7UxyNzcNFrll-A2NITA-poSjmsiPJPvthGR4KaQ73n8T8amVAY9LldYNXRi0wT-XqfaULM" alt="">
+        </form>
+            <br> 
+      <!-- <div class="col-sm"> -->
+        <button type="submit" class="btn btn-lg btn-secondary">Aller vers l'&eacute;tape 2</button>
+      <!-- </div> -->
 </div>
+<br>
+<br>
 <%- include('../layout/bottom'); %>

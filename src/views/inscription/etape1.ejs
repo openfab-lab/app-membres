@@ -2,7 +2,7 @@
 <div class="container">
     <h1 class="display-3">Inscription</h1>
     <div class="col-md-8">
-      <h2>Etape 1</h2>
+      <h2>Etape 2/4</h2>
       <p>On veut tout savoir sur toi! (t’inqui&egrave;te pas, ça reste priv&eacute;)</p>
     </div>
     <% if (errorMessage) { %>
@@ -14,23 +14,23 @@
         <div class="col-sm-12">
             <div class="row">
                 <div class="col-sm-6 form-group">
-                    <label>Pr&eacute;nom</label>
+                    <label>Pr&eacute;nom (Peter)</label>
                     <input type="text" class="form-control" name="first_name" value="<%= returningSubscription.first_name %>" required autofocus>
                 </div>
                 <div class="col-sm-6 form-group">
-                    <label>Nom de famille</label>
+                    <label>Nom de famille (Parker)</label>
                     <input type="text" class="form-control" name="last_name" value="<%= returningSubscription.last_name %>" required>
                 </div>
             </div>
             <hr>
 
         <div class="form-group">
-            <label>Numéro de téléphone</label>
-            <input type="tel" pattern='^\+?\d{0,13}' class="form-control" name="phone_number" value="<%= returningSubscription.phone_number %>" required>
+            <label>Num&eacute;ro de t&eacute;l&eacute;phone (+32 555 ** ** **)</label>
+            <input type="tel" pattern='[\+]\d{2}[\ ]\d{3}[\ ]\d{2}[\ ]\d{2}[\ ]\d{2}' class="form-control" name="phone_number" value="<%= returningSubscription.phone_number %>" required>
         </div>
         <hr>
         <div class="form-group">
-            <label>Adresse email</label>
+            <label>Adresse email (spiderulez@protonmail.***)</label>
             <input type="email" class="form-control" name="email_address" value="<%= returningSubscription.email_address %>" required>
         </div>
         <div class="form-group">
@@ -41,7 +41,7 @@
             <label>Confirmation du mot de passe</label>
             <input type="password" class="form-control" name="password_b" required>
         </div>
-        <button type="submit" class="btn btn-lg btn-secondary">Encode ton adresse</button>
+        <button type="submit" class="btn btn-lg btn-secondary">Valide tes coordonn&eacute;es</button>
         </div>
     </form>
 </div>

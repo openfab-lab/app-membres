@@ -1,8 +1,9 @@
 <%- include('../layout/top', {page: 'inscription_etape4'}); %>
 <div class="container">
-    <h1 class="display-3">Inscription</h1>
+      <h1 class="display-3">Inscription</h1>
     <div class="col-md-4">
-      <h2>Règlement int&eacute;rieur</h2>
+      <h2>Etape 3/4</h2>
+      <img src="https://user-images.githubusercontent.com/12049360/83777576-e02d0a80-a689-11ea-97a5-fd4a8174c891.jpg" alt=""><br>
     </div>
     <% if (errorMessage) { %>
         <div class="alert alert-danger" role="alert">
@@ -12,25 +13,22 @@
     <form action="/inscription/etape4?id=<%= id %>" method="post">
         <div class="col-sm-12">
             <div class="row">
-                <div class="col-sm-12">
-                    <p>Nous vous invitons à lire le règlement intérieur et à donner votre approbation par rapport à ce dernier.</p>
+                <div class="col-sm-12 mt-4">
+                    <p>Nous vous invitons à lire les règles entretenues au sein de l'atelier.</p>
                     <p>Tout non-respect du règlement intérieur peut mener à une exclusion de l'association, conformément à nos status.</p>
-                    <p><a href="https://openfab.gitbook.io/rtfm/" target="_blank">Voici un lien vers le règlement.</a></p>
+                    <p><a href="https://openfab.gitbook.io/rtfm/gouvernance/code-de-conduite" target="_blank">Voici un lien vers notre manuel de l'usager.</a></p>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group form-check">
                   <input type="checkbox" class="form-check-input" name="house_rules" id="house_rules">
-                  <label class="form-check-label" for="house_rules">Oui, j'ai lu le règlement et j'accepte les conditions</label>
+                  <label class="form-check-label" for="house_rules">Oui, j'ai lu le règlement et j'en accepte les conditions</label>
                 </div>
-                <!-- <div class="col-sm-6 form-group">
-                    <label></label>
-                    <input type="checkbox" class="form-control" name="house_rules" required>
-                </div> -->
             </div>
         </div>
-        <button type="submit" class="btn btn-lg btn-secondary">Finaliser l'inscription</button>
-        </div>
+        <button type="submit" class="btn btn-lg btn-secondary">Et pour finir... </button>
     </form>
-</div>
+  </div>
+<br>
+<br>
 <%- include('../layout/bottom'); %>
