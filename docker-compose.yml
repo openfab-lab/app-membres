@@ -24,6 +24,7 @@ node:
   ports:
     - "19461:17461"
   volumes:
+    - ./bin:/var/www/bin
     - ./config:/var/www/config
     - ./src:/var/www/src
     - ./package.json:/var/www/package.json
